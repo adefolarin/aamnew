@@ -1,0 +1,83 @@
+.Timer {
+    display: flex;
+    justify-content:right;
+    text-align: right;
+    padding: 0px;
+    margin: -75px;
+}
+
+.time {
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dimension {
+     font-size: 10px;
+     color:#fff;
+     font-weight: 700;
+}
+
+.minical {
+  margin-top: 0px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .Timer {
+        display: flex;
+        justify-content:center;
+        text-align: center;
+        padding: 0px;
+        margin: -40px;
+    }
+    .time {
+        font-size: 16px;
+    }
+    
+    .dimension {
+         font-size: 9px;
+    }
+
+}
+
+@media (min-width: 768px)and (max-width: 912px) {
+    .Timer {
+        display: flex;
+        justify-content:left;
+        text-align: left;
+        padding: 0px;
+        margin: -60px;
+    }
+    #nextevent {
+        margin-top: -20px;
+    }
+    .time {
+        font-size: 16px;
+    }
+    
+    .dimension {
+         font-size: 9px;
+    }
+
+}
+
+@media (min-width: 913px)and (max-width: 1024px) {
+
+    .Timer {
+        display: flex;
+        justify-content:left;
+        text-align: left;
+        padding: 0px;
+        margin: -60px;
+    }
+
+    .time {
+        font-size: 16px;
+    }
+    
+    .dimension {
+         font-size: 9px;
+    }
+
+}
