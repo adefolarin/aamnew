@@ -30,6 +30,38 @@
      font-weight: 700;
   }
 
+  #appimg {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  #appimg img {
+    width: 100%;
+  
+  }
+
+  #getconnected {
+    width: 250px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  #getconnected > #getconnectedimg {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+
+  #faithid {
+    margin-top: 40px;
+    margin-left: 50px;
+  }
+
+
+
+
 
   /* 
 ---------------------------------------------
@@ -118,6 +150,10 @@ banner
   font-weight: 700;
 }
 
+#whitecolor {
+  color: #fff;
+}
+
 #sectionmargin {
   margin-top: 70px;
 }
@@ -173,9 +209,8 @@ banner
 
 #homegivebtnid {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 120px;
+  justify-content: left;
+  align-items: left;
 }
 
 #homegivebtn {
@@ -224,7 +259,7 @@ banner
    display:grid;
    justify-content: center;
    align-items: center;
-   height: 300px;
+   height: 350px;
 }
 
 #downloadbtn {
@@ -238,7 +273,12 @@ banner
 }
 
 #homeaboutimg {
-  width: 80%;
+  width: 100%;
+}
+
+#homeaboutimgdiv {
+  width: 50%;
+  margin: auto;
 }
 
 
@@ -406,7 +446,7 @@ banner
  }
 
  #faithid {
-    margin-top: 20px;
+    margin-top: 100px;
     text-align: center;
  }
 
@@ -498,6 +538,48 @@ banner
   top: 30%;
   padding: 10px;
 }
+
+#appimg {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 130px;
+}
+
+#getconnected {
+  width: 30%;
+}
+
+#getconnected > #getconnectedimg {
+  width: 100%;
+  border-radius: 50%;
+  margin-top: -20px;
+ 
+}
+
+
+#faithid {
+  margin-top: 30px;
+  margin-left: 0;
+
+}
+
+#faithid h4, #faithid p  {
+  font-size: 15px;
+
+}
+
+#joinuslive {
+  text-align: center;
+}
+
+#homegivebtnid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 }
 

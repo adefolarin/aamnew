@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Col, Row, Card, ButtonToolbar, ButtonGroup, Image, Tab, Nav, InputGroup, Form, Button, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVideoCamera, faShareNodes, faDownload, faFileAudio, faUser, faLocation, faClock, faPerson, faArrowLeft, faAngleRight, faMousePointer, faPlane, faPlaneUp, faPlaneSlash, faPlaneDeparture, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
+import { faVideoCamera, faShareNodes, faDownload, faFileAudio, faUser, faLocation, faClock, faPerson, faArrowLeft, faAngleRight, faMousePointer, faPlane, faPlaneUp, faPlaneSlash, faPlaneDeparture, faPhoneVolume, faHeart, faBible } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom';
 import { SearchFormGroup } from '../../components/Forms/SearchFormGroup';
@@ -22,7 +22,7 @@ import { ReactTyped  } from "react-typed";
 import Modal from 'react-bootstrap/Modal';
 import { VideoModal2 } from '../../components/VideoModal2';
 import { Fade, Bounce, Slide, Jump, Roll, Flip, Rotate, Flash, Jello,Pulse, RubberBand, Shake, Swing, Tada, Wobble, HeadShake, Pop, Spin, LightSpeed } from "react-swift-reveal";
-import { faEnvelope, faPhone, faMapLocation, faAddressCard, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faMapLocation, faAddressCard, faAddressBook, faGift, faDollar } from '@fortawesome/free-solid-svg-icons';
 import { RWebShare } from "react-web-share";
 import { ProductCategory } from '../../components/ProductCategory';
 import { Product } from '../../components/Product';
@@ -196,33 +196,43 @@ export const Home = () => {
         <Container>
           <Row>
             <Col md={5}>
-            
+              <div id='homeaboutimgdiv'>
               <Image src="images/about.png" thumbnail fluid id="homeaboutimg" />
+              </div>
 
             </Col>
             <Col md={7}>
-              <Row>
-              <div style={{ marginTop: '20px' }}></div>
+            <Row>
+                <div style={{ marginTop: '20px' }}></div>
                 <Col sm={12}>
-                  <p>
-                    Kingdom Connection Christian Center is a Word of Faith, non-denominational, full gospel church.
-                  </p>
-                  <p>
-                     We believe the Bible, the complete writings of both the Old and New Testaments is the literal Word of God, verbally inspired by the Holy Spirit, inerrant as originally given by God, and infallible as the standard of our faith and practice...
-                  </p>
-                  <p>
-                  Our mission is reaching and harvesting lost souls for Christ and teaching the Body of Christ how to effectively apply God’s principles to have victory in every area of life. Kingdom Connection Christian Center is a church committed to raising champions in the body of Christ.
-                  </p>
-                  <p>
-                  Our mission is reaching and harvesting lost souls for Christ and teaching the Body of Christ how to effectively apply God’s principles to have victory in every area of life. Kingdom Connection Christian Center is a church committed to raising champions in the body of Christ.
-                  </p>
-                  <p>
-                  Our mission is reaching and harvesting lost souls for Christ and teaching the Body of Christ how to effectively apply God’s principles to have victory in every area of life. Kingdom Connection Christian Center is a church committed to raising champions in the body of Christ.
-                  </p>
-                  <p>
-                  Our mission is reaching and harvesting lost souls for Christ and teaching the Body of Christ how to effectively apply God’s principles to have victory in every area of life. Kingdom Connection Christian Center is a church committed to raising champions in the body of Christ.
-                  </p>
+                  <br></br>
+                  <div id="homeourmission">
+                    <h5 id="bluecolor">
+                      <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
+                        <FontAwesomeIcon icon={faBible} style={{ color: '#fff', fontSize: '14px' }} />
 
+                      </Button> &nbsp; &nbsp; Our Mission
+                    </h5>
+                    <p>
+                    Our mission is to raise champions for kingdom assignment and see lives transformed.
+                    </p>
+                  </div>
+                </Col>
+                <Col sm={12}>
+                  <h5 id="bluecolor">
+                    <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
+                      <FontAwesomeIcon icon={faHeart} style={{ color: '#fff', fontSize: '14px' }} />
+
+                    </Button> &nbsp; &nbsp; Our Vision
+                  </h5>
+                  <p>
+                     Changing nations, one life at a time
+                  </p>
+                </Col>
+            </Row>
+               <Row>
+                <Col sm={12}>
+                  <Link to='/about' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
                 </Col>
               </Row>
             </Col>
@@ -231,8 +241,133 @@ export const Home = () => {
         </Fade>
       </div>
       <br></br>
-     
 
+      <Container>
+          <Row>
+              <Col md={12}>
+                  <div>
+                      <br></br>
+                      <Row>
+
+                      <Col md={4}>
+                              <Card id="deptcard" style={{ backgroundColor: '#000080', color: '#fff', padding: '50px' }}>
+                                  <Card.Title>
+                                      <div className='text-center' id="whitecolor">
+                                          <button className='btn' style={{ backgroundColor: '#fff', color: '#000080', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faGift} /></button>
+                                          <br></br><br></br>
+                                          <h5 style={{ color: '#fff', fontSize: '18px' }}>Donate</h5>
+                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                      </div>
+                                  </Card.Title>
+                              </Card>
+                          </Col>
+
+                          <Col md={4}>
+                              <Card id="deptcard" style={{ backgroundColor: '#FF4500', color: '#fff', padding: '50px' }}>
+                                  <Card.Title>
+                                      <div className='text-center' id="whitecolor">
+                                          <button className='btn' style={{ backgroundColor: '#fff', color: '#FF4500', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faDollar} /></button>
+                                          <br></br><br></br>
+                                          <h5 style={{ color: '#fff', fontSize: '18px' }}>Give</h5>
+                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                      </div>
+                                  </Card.Title>
+                              </Card>
+                          </Col>
+
+                          <Col md={4}>
+                              <Card id="deptcard" style={{ backgroundColor: '#0085FF', color: '#fff', padding: '50px' }}>
+                                  <Card.Title>
+                                      <div className='text-center' id="whitecolor">
+                                          <button className='btn' style={{ backgroundColor: '#fff', color: '#0085FF', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faHeart} /></button>
+                                          <br></br><br></br>
+                                          <h5 style={{ color: '#fff', fontSize: '18px' }}>Volunteer</h5>
+                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                      </div>
+                                  </Card.Title>
+                              </Card>
+                          </Col>
+
+
+                      </Row>
+                  </div>
+              </Col>
+          </Row>
+      </Container>
+
+      <br></br><br></br>
+
+
+            {/*  APP DOWNLOAD    */}
+        <div>
+        <br></br><br></br>
+        <Fade delay={300} duration={2000}>
+        <Container style={{ backgroundColor: '#204782', padding: '70px' }} fluid>
+          <Row>
+            <Col md={6}>
+              <div id="downloaddiv">
+              <h4 id="whitecolor" className='text-center'>ADE-AJALA MOBILE APP</h4>
+              <p id="whitecolor">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
+            
+                <div className='text-center'>
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Link to="#" className='btn' id="downloadbtn">
+                      <Image src="images/appstore.png" fluid width="286" height="130" />
+                    </Link>
+                    <Link to="#" className='btn' id="downloadbtn">
+                      <Image src="images/playstore.png" fluid  width="286" height="130"/>
+                    </Link>
+                  </ButtonGroup>
+
+                </div>
+              </div>            
+            </Col>
+            <Col md={6}>
+                <Jump delay={600} duration={2300}>
+                <div id="appimg">
+                  <Image fluid src="images/app.png" thumbnail style={{ backgroundColor:'transparent',border:'none' }} />
+                </div>
+                </Jump>
+            </Col>
+          </Row>
+        </Container>
+        </Fade>
+      </div>
+
+
+      <div>
+        <Fade delay={300} duration={2000}>
+        <Container style={{ backgroundColor: '#000', margin: '0px', padding:'0px' }} fluid>
+        <div style={{ position: 'relative' }}>
+            <Image fluid src="images/img3.jpg" alt="Card image" style={{ width: '100%', height: '270px' }} />
+            <div id="overlay" style={{ position: 'absolute', width: '100%', height: '100%', top: '0', bottom: '0', right: '0', left: '0', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+              <Row>
+                <Col md={8}>
+                  <div id="faithid">
+                    <h4 id="whitecolor">GET CONNTECTED WITH<br></br>
+                     BISHOP ISREAL ADE-AJALA
+                    </h4>
+                    <p id="whitecolor">EVERY FRIDAY BY 12:30pm</p>
+                    <p id='joinuslive'>
+                    <div id="homegivebtnid">
+                      <Link to="/livestrea" className='btn btn-danger' id="homegivebtn" reloadDocument>
+                        JOIN US LIVE
+                      </Link>
+                    </div>
+                   </p>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div id='getconnected'>
+                    <Image fluid src="images/pastor2.jpeg" id='getconnectedimg' thumbnail style={{ backgroundColor:'transparent',border:'none' }} />
+                  </div>
+                </Col>
+              </Row>
+            </div>
+            </div>
+        </Container>
+        </Fade>
+      </div>
 
 
 
