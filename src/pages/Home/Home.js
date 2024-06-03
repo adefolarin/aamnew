@@ -40,6 +40,7 @@ export const Home = () => {
      const [productsearch, setProductSearch] = useState([]);
      const [getproductsearch, getProductSearch] = useState([]);
      const [nextevent, setNextEvent] = useState([]);
+     const [sermons, setSermonAllOne] = useState([]);
 
    
      const [buttontext, setButtonText] = useState('Search');
@@ -120,12 +121,19 @@ export const Home = () => {
         .then((response) => setNextEvent(response.data['event']));
   };
 
+  const fetchSermonsAllOneData = () => {
+    return axios.get(serverurl+"/api/sermonallone")
+        .then((response) => setSermonAllOne(response.data['sermons']));
+  };
+
+
 
 
   useEffect(() => {
     fetchBannerData()
     fetchEventsData();
     fetchNextEventData();
+    fetchSermonsAllOneData();
  },[]);
 
 
@@ -242,6 +250,7 @@ export const Home = () => {
       </div>
       <br></br>
 
+       {/*  Donation / Giving  */}
       <Container>
           <Row>
               <Col md={12}>
@@ -298,7 +307,7 @@ export const Home = () => {
       <br></br><br></br>
 
 
-            {/*  APP DOWNLOAD    */}
+        {/*  APP DOWNLOAD    */}
         <div>
         <br></br><br></br>
         <Fade delay={300} duration={2000}>
@@ -335,6 +344,7 @@ export const Home = () => {
       </div>
 
 
+       {/*  LIVE STREAM    */}
       <div>
         <Fade delay={300} duration={2000}>
         <Container style={{ backgroundColor: '#000', margin: '0px', padding:'0px' }} fluid>
@@ -368,6 +378,86 @@ export const Home = () => {
         </Container>
         </Fade>
       </div>
+
+
+
+      {/*  About  */}
+      <div id="sectionmargin" className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container>
+          <Row>
+            <Col md={7}>
+              <div id='homeaboutimgdiv'>
+                
+              {
+
+              sermons && sermons.length > 0 && sermons.map((sermonData) => {
+                return <Row>
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                    <Row>
+                      <Col md={12}>
+                        <div className=''>
+                          <iframe style={{ width: '100%', height: '250px', margin: 'auto' }}
+                            src={sermonData.sermons_file}
+                            frameborder="0"
+                              allow="accelerometer; 
+                              autoplay; 
+                              clipboard-write; 
+                              encrypted-media; 
+                              gyroscope; 
+                              picture-in-picture; 
+                              web-share" 
+                              allowfullscreen>
+                            </iframe>
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Row>
+                })
+                }
+              </div>
+
+            </Col>
+            <Col md={5}>
+            <Row>
+                <div style={{ marginTop: '20px' }}></div>
+                <Col sm={12}>
+                  <br></br>
+                  <div id="homeourmission">
+                    <h5 id="bluecolor">
+                       &nbsp; &nbsp; MESSAGES
+                    </h5>
+                    <p>
+                    Our mission is to raise champions for kingdom assignment and see lives transformed.
+                    </p>
+                  </div>
+                </Col>
+                <Col sm={12}>
+                  <h5 id="bluecolor">
+                    <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
+                      <FontAwesomeIcon icon={faHeart} style={{ color: '#fff', fontSize: '14px' }} />
+
+                    </Button> &nbsp; &nbsp; Our Vision
+                  </h5>
+                  <p>
+                     Changing nations, one life at a time
+                  </p>
+                </Col>
+            </Row>
+               <Row>
+                <Col sm={12}>
+                  <Link to='/about' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+       </Fade>
+      </div>
+      <br></br>
+
 
 
 
