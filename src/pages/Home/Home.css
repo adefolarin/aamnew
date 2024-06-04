@@ -281,6 +281,11 @@ banner
   margin: auto;
 }
 
+#homesermonimgdiv {
+  width: 100%;
+  padding: 5px;
+}
+
 
 /*    Banner Section For Other Pages  */
 

@@ -41,6 +41,7 @@ export const Home = () => {
      const [getproductsearch, getProductSearch] = useState([]);
      const [nextevent, setNextEvent] = useState([]);
      const [sermons, setSermonAllOne] = useState([]);
+     const [podcasts, setPodcastAllOne] = useState([]);
 
    
      const [buttontext, setButtonText] = useState('Search');
@@ -126,6 +127,11 @@ export const Home = () => {
         .then((response) => setSermonAllOne(response.data['sermons']));
   };
 
+  const fetchPodcastsAllOneData = () => {
+    return axios.get(serverurl+"/api/podcastallone")
+        .then((response) => setPodcastAllOne(response.data['podcasts']));
+  };
+
 
 
 
@@ -134,6 +140,7 @@ export const Home = () => {
     fetchEventsData();
     fetchNextEventData();
     fetchSermonsAllOneData();
+    fetchPodcastsAllOneData();
  },[]);
 
 
@@ -381,13 +388,13 @@ export const Home = () => {
 
 
 
-      {/*  About  */}
+      {/*  Sermons  */}
       <div id="sectionmargin" className='homeabout'>
       <Fade delay={300} duration={2000}>
         <Container>
           <Row>
-            <Col md={7}>
-              <div id='homeaboutimgdiv'>
+            <Col md={12}>
+              <div id='homesermonimgdiv'>
                 
               {
 
@@ -396,9 +403,9 @@ export const Home = () => {
                   <div
                     style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
                     <Row>
-                      <Col md={12}>
+                      <Col md={6}>
                         <div className=''>
-                          <iframe style={{ width: '100%', height: '250px', margin: 'auto' }}
+                          <iframe style={{ width: '100%', height: '350px', margin: 'auto' }}
                             src={sermonData.sermons_file}
                             frameborder="0"
                               allow="accelerometer; 
@@ -412,46 +419,32 @@ export const Home = () => {
                             </iframe>
                           </div>
                         </Col>
-                      </Row>
-                    </div>
-                  </Row>
+                      <Col sm={6}>
+                      <br></br>
+                      <div id="homeourmission">
+                        <h5 id="bluecolor">
+                          MESSAGES
+                        </h5>
+                        <p>
+                          {sermonData.sermons_date}
+                        </p>
+                        <h6>{sermonData.sermons_title}</h6>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                      </div>
+                      <div>
+                      <Link to='/sermon' reloadDocument className='btn btn-danger' id='btn'>Discover More</Link>
+                      </div>
+                    </Col>
+                 </Row>
+
+                </div>
+                </Row>
                 })
                 }
               </div>
 
             </Col>
-            <Col md={5}>
-            <Row>
-                <div style={{ marginTop: '20px' }}></div>
-                <Col sm={12}>
-                  <br></br>
-                  <div id="homeourmission">
-                    <h5 id="bluecolor">
-                       &nbsp; &nbsp; MESSAGES
-                    </h5>
-                    <p>
-                    Our mission is to raise champions for kingdom assignment and see lives transformed.
-                    </p>
-                  </div>
-                </Col>
-                <Col sm={12}>
-                  <h5 id="bluecolor">
-                    <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
-                      <FontAwesomeIcon icon={faHeart} style={{ color: '#fff', fontSize: '14px' }} />
 
-                    </Button> &nbsp; &nbsp; Our Vision
-                  </h5>
-                  <p>
-                     Changing nations, one life at a time
-                  </p>
-                </Col>
-            </Row>
-               <Row>
-                <Col sm={12}>
-                  <Link to='/about' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
-                </Col>
-              </Row>
-            </Col>
           </Row>
         </Container>
        </Fade>
@@ -459,6 +452,76 @@ export const Home = () => {
       <br></br>
 
 
+      {/* Podcast  */}
+
+      <div>
+            <Container>
+                <Row>
+                    <br></br><br></br><br></br>
+                    {
+                        podcasts && podcasts.length > 0 && podcasts.map((podcastsData) => {
+                            return <>
+                                {podcastsData.podcasts_title !== '' ?
+                                    <Row style={{ margin: '0px', marginTop: '40px', backgroundColor: '#fff' }}>
+                                        <div
+                                            style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '30px' }}>
+                                            <Row>
+                                                <Col md={2}>
+                                                    <div className='text-center'>
+                                                            <br></br>
+                                                            <h6 style={{ fontWeight: 'bold' }} className="text-center bluecolor">
+                                                                {podcastsData.podcasts_title}
+                                                            </h6>
+                                                    </div>
+
+                                                </Col>
+                                                <Col md={10}>
+                                                    <div className='podcastalign'>
+                                                        <div className='text-center'>
+                                                            <audio controls style={{ width: '100%', backgroundColor: '#135592', borderRadius: '20px' }}>
+                                                                <source src={podcastsData.podcasts_file}
+                                                                    type="audio/mpeg">
+                                                                </source>
+
+                                                            </audio>
+                                                        </div>
+                                                        <div>
+                                                            <p className='text-center'>
+                                                                <ButtonGroup className="me-2" aria-label="Second group" style={{ color: 'red' }}>
+                                                                <Link to='/podcast' reloadDocument className='btn btn-danger' id='btn'>Listen More</Link>
+
+                                                                </ButtonGroup>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </Col>
+
+                                            </Row>
+
+                                        </div>
+
+                                    </Row> :
+
+                                    <Row>
+                                        <Col md={12}>
+                                            <Card id="deptcard">
+                                                <Card.Body className='text-center'>
+                                                    <Card.Title>
+                                                        No Podcast For Now
+                                                    </Card.Title>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                }
+                            </>
+                        })
+                    }
+                </Row>
+
+
+            </Container>
+        </div>
 
 
     </div>
