@@ -48,6 +48,44 @@ export const Home = () => {
      const [message, setMessageText] = useState();
      const [successmessage, setSuccessMessage] = useState();
      const [errormessage, setErrorMessage] = useState();
+
+
+     const [buttontextp, setButtonTextp] = useState('Send');
+     const [messagep, setMessageTextp] = useState();
+     const [successmessagep, setSuccessMessagep] = useState();
+     const [errormessagep, setErrorMessagep] = useState();
+ 
+     const [prayeruser_name, setPrayerUserName] = useState();
+     const [prayeruser_email, setPrayerUserEmail] = useState();
+     const [prayeruser_pnum, setPrayerUserPnum] = useState();
+     const [prayeruser_request, setPrayerRequest] = useState();
+
+
+     const Save = async () => {
+      setButtonTextp("Processing");
+      if(prayeruser_name === "" || prayeruser_email === "" || prayeruser_pnum === "" || prayeruser_request === "") {
+          setMessageTextp("error");
+          setErrorMessagep("All Fields are Required");
+          setButtonTextp("Send");
+      } else {
+      try {
+                    
+          const items = { prayeruser_name, prayeruser_email, prayeruser_pnum, prayeruser_request };
+          //console.warn(items);
+          const result = await axios.post(serverurl + "/api/prayer", items);
+          setMessageTextp("success");
+          setSuccessMessagep(result.data.message);
+          setButtonTextp("Send");
+          console.warn(result);
+      
+      } catch (error) {
+          setMessageTextp("error");
+          setErrorMessagep("!!Sorry, Your Message Could Not Be Processed");
+          setButtonTextp("Send");
+          console.log(error);
+      }
+    }
+  };
    
    
    
@@ -100,6 +138,14 @@ export const Home = () => {
   const [productsbycat, setProductsByCat] = useState([]);
   const [productcategoriesid, setProductCategoriesID] = useState([]);
 
+  const [news, setNews] = useState([]);
+     
+   
+  const fetchNewsData = () => {
+    return axios.get(serverurl+"/api/newssome")
+        .then((response) => setNews(response.data['news']));
+  };
+
 
   const fetchBannerData = () => {
     return axios.get(serverurl + "/api/banner")
@@ -141,6 +187,7 @@ export const Home = () => {
     fetchNextEventData();
     fetchSermonsAllOneData();
     fetchPodcastsAllOneData();
+    fetchNewsData();
  },[]);
 
 
@@ -191,6 +238,57 @@ export const Home = () => {
   return (
     <div>
         <VideoModal2 show={show} videoid={videoid} handleClose={handleClose} />
+
+
+    {/*  BANNER  */}
+     <div className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container fluid>
+          <Row>
+            <Col md={12}>
+              <div id='homesermonimgdiv' style={{ backgroundColor:'#D2DAE6' }}>
+
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                    <Row>
+                      <Col sm={6}>
+                      <br></br>
+                      <div id="homebanner">
+                        <h6>
+                          WELCOME TO
+                        </h6>
+                        <h5>
+                          ADE AJALA MINISTRIES
+                          <hr style={{ width:'50%' }}></hr>
+                        </h5>
+                        <p>We strive to empower individuals to depeen their relationship <br></br>
+                        with God and live out their faith in meaningful ways</p>
+                        <br></br>
+                        <Link to='/livestream' reloadDocument className='btn btn-danger' id='btn'>JOIN SERVICE</Link>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                      <Link to='/event' reloadDocument className='btn btn-danger' id='btn'>UPCOMING EVENT</Link>
+                      </div>
+                      </Col>
+                      <Col md={6}>
+                        <div className=''>
+                        <br></br>
+                        <div id='homeaboutimgdiv'>
+                           <Image src="images/newbishopimg.png" thumbnail fluid id="homeaboutimg" />
+                        </div>
+                        </div>
+                      </Col>
+                 </Row>
+
+                </div>
+              </div>
+
+            </Col>
+
+          </Row>
+        </Container>
+       </Fade>
+      </div>
+      <br></br>
 
     
 
@@ -354,7 +452,7 @@ export const Home = () => {
        {/*  LIVE STREAM    */}
       <div>
         <Fade delay={300} duration={2000}>
-        <Container style={{ backgroundColor: '#000', margin: '0px', padding:'0px' }} fluid>
+        <Container style={{ backgroundColor: '#000', margin: '0px' }} fluid>
         <div style={{ position: 'relative' }}>
             <Image fluid src="images/img3.jpg" alt="Card image" style={{ width: '100%', height: '270px' }} />
             <div id="overlay" style={{ position: 'absolute', width: '100%', height: '100%', top: '0', bottom: '0', right: '0', left: '0', backgroundColor: 'rgba(0,0,0,0.5)' }}>
@@ -455,14 +553,17 @@ export const Home = () => {
       {/* Podcast  */}
 
       <div>
+      <br></br><br></br>
             <Container>
                 <Row>
-                    <br></br><br></br><br></br>
+                  
+                    
                     {
                         podcasts && podcasts.length > 0 && podcasts.map((podcastsData) => {
                             return <>
                                 {podcastsData.podcasts_title !== '' ?
-                                    <Row style={{ margin: '0px', marginTop: '40px', backgroundColor: '#fff' }}>
+                                    <Row style={{ backgroundColor: '#fff' }}>
+                                      <h5 id="bluecolor">PODCAST</h5>
                                         <div
                                             style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '30px' }}>
                                             <Row>
@@ -521,7 +622,331 @@ export const Home = () => {
 
 
             </Container>
-        </div>
+      </div>
+
+
+     {/*  KCILE  */}
+     <div id="sectionmargin" className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container fluid>
+          <Row>
+            <Col md={12}>
+              <div id='homesermonimgdiv' style={{ backgroundColor:'#D2DAE6' }}>
+
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '50px' }}>
+                    <Row>
+                      <Col sm={6}>
+                      <br></br>
+                      <div id="homeourmission">
+                        <h5 id="bluecolor">
+                          KINGDOM CONNTECTION INSTITUTE <br></br>LIFE EMPOWERMENT
+                        </h5>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                      </div>
+                      <div>
+                      <Link to='/kcile' reloadDocument className='btn btn-danger' id='btn'>Apply Now</Link>
+                      </div>
+                      </Col>
+                      <Col md={6}>
+                        <div className=''>
+                        <div id='homekcileimgdiv'>
+                           <Image src="images/kcilelogo.png" thumbnail fluid id="homekcileimg" />
+                        </div>
+                        </div>
+                      </Col>
+                 </Row>
+
+                </div>
+              </div>
+
+            </Col>
+
+          </Row>
+        </Container>
+       </Fade>
+      </div>
+      <br></br>
+
+
+
+    {/*  E STORE  */}
+     <div id="sectionmargin" className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container fluid>
+          <Row>
+            <Col md={12}>
+              <div id='homesermonimgdiv'>
+
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                 <Row>
+                      <Col md={6}>
+                        <div className=''>
+                        <div id='homestoreimgdiv'>
+                           <Image src="images/about.png" thumbnail fluid id="homeaboutimg" />
+                        </div>
+                        </div>
+                      </Col>
+                      <Col sm={6}>
+                      <br></br>
+                      <div id="homeourmission">
+                        <h5 id="bluecolor">
+                          E-STORE
+                        </h5>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                      </div>
+                      <div>
+                      <Link to='#' reloadDocument className='btn btn-danger' id='btn'>EXPLORE MORE</Link>
+                      </div>
+                      </Col>
+                 </Row>
+
+                </div>
+              </div>
+
+            </Col>
+
+          </Row>
+        </Container>
+       </Fade>
+      </div>
+      <br></br>
+
+
+    
+    {/*  PRAYER REQUEST  */}
+    <div id="sectionmargin" className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container fluid>
+          <Row>
+            <Col md={12}>
+              <div id='homesermonimgdiv'>
+
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                 <Row>
+                      <Col md={6}>
+                      </Col>
+                      <Col sm={6}>
+                      <br></br>
+                      <div id="homeourmission">
+                      <Card id="deptcard" style={{ backgroundColor: '#135592', color: '#fff' }}>
+                                <Card.Header style={{ backgroundColor: '#135592', color: '#fff', fontSize: '20px', textAlign: 'center' }}>
+                                  PRAYER REQUEST
+                                </Card.Header>
+                                <Card.Body>
+                                    <Form>
+
+                                        <InputGroup className="mb-3" controlId="">
+                                            <Form.Control type="text" size="lg" placeholder="Name" style={{ fontSize: '16px', padding: '15px' }}
+                                                value={prayeruser_name} onChange={(e) => setPrayerUserName(e.target.value)} />
+                                        </InputGroup>
+
+                                        <InputGroup className="mb-3" controlId="">        
+                                            <Form.Control type="email" size="lg" placeholder="Email" style={{ fontSize: '16px', padding: '15px' }}
+                                                value={prayeruser_email} onChange={(e) => setPrayerUserEmail(e.target.value)} />
+                                      
+                                        </InputGroup>
+
+                                        <InputGroup className="mb-3" controlId="">
+                                            <Form.Control type="text" size="lg" placeholder="Pnone Number" style={{ fontSize: '16px', padding: '15px' }}
+                                                value={prayeruser_pnum} onChange={(e) => setPrayerUserPnum(e.target.value)} />
+                                        </InputGroup>
+
+
+                                        <Form.Group className="mb-3" controlId="">
+                                            <Form.Control type="text" size="lg" placeholder="Message" style={{ fontSize: '16px', padding: '15px' }}
+                                                value={prayeruser_request} onChange={(e) => setPrayerRequest(e.target.value)} as="textarea" rows={3} />
+                                        </Form.Group>
+                                    </Form>
+                                    <div>
+                                        {
+                                            messagep === 'success' ?
+                                                <div className='alert alert-success alert-sm'>
+                                                    {successmessagep}
+                                                </div> :
+                                                ''
+                                        }
+
+                                        {
+                                            messagep === 'error' ?
+                                                <div className='alert alert-danger alert-sm'>
+                                                    {errormessagep}
+                                                </div> :
+                                                ''
+                                        }
+                                    </div>
+                                    <ButtonToolbar
+                                        className="justify-content-between"
+                                        aria-label="Toolbar with Button groups"
+                                    >
+
+                                        <ButtonGroup className="me-4" aria-label="First group">
+                                            {
+                                                buttontextp === "Processing" ?
+                                                    <Button class="btn btn-danger" style={{ backgroundColor: '#249D59', color: '#fff', borderRadius: '0', border: 'none', fontWeight: 'bold' }} onClick={Save}>
+                                                        {buttontextp}
+                                                    </Button> :
+                                                    ''
+                                            }
+
+                                            {
+                                                buttontextp === "Send" ?
+                                                    <Button class="btn btn-danger" style={{ backgroundColor: 'red', color: '#fff', borderRadius: '0', border: 'none', fontWeight: 'bold' }} onClick={Save}>
+                                                        {buttontextp}
+                                                    </Button> :
+                                                    ''
+                                            }
+                                        </ButtonGroup>
+                                    </ButtonToolbar>
+                                </Card.Body>
+                            </Card>
+                      </div>
+                      </Col>
+                 </Row>
+
+                </div>
+              </div>
+
+            </Col>
+
+          </Row>
+        </Container>
+       </Fade>
+    </div>
+    <br></br>
+
+
+      {/*  CONTACT  */}
+      <div id="sectionmargin" className='homeabout'>
+      <Fade delay={300} duration={2000}>
+        <Container fluid>
+          <Row>
+            <Col md={12}>
+              <div id='homesermonimgdiv' style={{ background:'#204782' }}>
+
+                  <div
+                    style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                 <Row>
+
+                      <Col sm={6}>
+                      <div id="homecontactdiv">
+                        <p style={{ color:'#fff' }}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                      </div>
+                      </Col>
+                      <Col md={4}>
+                        <div id='homesocialmedia'>
+                        <div>
+                                <p className='text-center'>
+                                    <ButtonGroup className="me-2" aria-label="First group">
+                                        <Link to="https://facebook.com/KcccDenver" reloadDocument className='btn btn-danger' id="homesocialbtn" target='blank'>
+                                            <FontAwesomeIcon icon={faFacebook} />
+                                        </Link>
+                                    </ButtonGroup>
+                                    <ButtonGroup className="me-2" aria-label="Second group">
+                                        <Link to="https://instagram.com/Kcccaurora" reloadDocument className='btn btn-danger' id="homesocialbtn" target='blank'>
+                                            <FontAwesomeIcon icon={faInstagram} />
+                                        </Link>
+
+                                    </ButtonGroup>
+                                    <ButtonGroup className="me-2" aria-label="Second group">
+                                        <Link to="https://twitter.com/pastorade" reloadDocument className='btn btn-danger' id="homesocialbtn" target='blank'>
+                                            <FontAwesomeIcon icon={faTwitter} />
+                                        </Link>
+                                    </ButtonGroup>
+                                    <ButtonGroup className="me-2" aria-label="Second group">
+                                        <Link to="https://youtube.com/@adeajalaministries" reloadDocument className='btn btn-danger' id="homesocialbtn" target='blank'>
+                                            <FontAwesomeIcon icon={faYoutube} />
+                                        </Link>
+                                    </ButtonGroup>
+
+                                </p>
+                            </div>
+                        </div>
+                      </Col>
+                      <Col md={2}>
+                        <div id='homecontact'>
+                          <div>
+                           <Link to='#' reloadDocument className='btn btn-danger' id='btn'>CONTACT US</Link>
+                          </div>
+                        </div>
+                      </Col>
+                 </Row>
+
+                </div>
+              </div>
+
+            </Col>
+
+          </Row>
+        </Container>
+       </Fade>
+      </div>
+      <br></br>
+
+
+      {/*  NEWS */}
+      <div>
+      <br></br><br></br>
+      <Container>
+                <Row>
+                    
+                    <h5 id="bluecolor">LATEST NEWS</h5>
+                    {
+                        news && news.length > 0 && news.map((newsData) => {
+                            return <>
+                                {newsData.news_title !== '' ?
+                                    <Col md={3}>
+                                        <Card id="deptcard">
+                                            <Card.Img variant="top" src={newsData.news_file} />
+                                            <Card.Body className='text-center'>
+                                                <Card.Title>
+                                                    <p className='homeminicalevents'>
+                                                        <ButtonGroup vertical>
+                                                            <Button style={{ backgroundColor: '#135592', color: '#fff', fontWeight: '800', border: 'none', borderRadius: '0', height: '' }}>{newsData.news_date}</Button>
+                                                        </ButtonGroup>
+                                                    </p>
+                                                    <h6 id="bluecolor">{newsData.news_title}</h6>
+                                                </Card.Title>
+     
+                                                <Link to={"/news-details?newsid=" + newsData.news_id}
+                                                    variant="danger" className='btn btn-danger btn-sm'
+                                                    style={{ textDecoration: 'none', color: '#135592', border: '1px solid red', borderRadius: '0', backgroundColor: 'transparent' }} reloadDocument>New Details</Link>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col> :
+                                    <Col md={12}>
+                                        <Card id="deptcard">
+                                            <Card.Body className='text-center'>
+                                                <Card.Title>
+                                                    No News For Now
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                }
+                            </>
+                        })
+                    }
+                </Row>
+                <br></br>
+                <Row>
+                  <Col>
+                     <div>
+                        <p className='text-center'>
+                            <ButtonGroup className="me-2" aria-label="Second group" style={{ color: 'red' }}>
+                            <Link to='/news' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
+
+                            </ButtonGroup>
+                        </p>
+                    </div>
+                  </Col>
+                </Row>
+
+
+            </Container>
+      </div>
 
 
     </div>

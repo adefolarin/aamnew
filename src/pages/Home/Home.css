@@ -207,6 +207,31 @@ banner
    font-size: 30px;
 }
 
+
+#homesocialbtn {
+  background-color: #fff;
+  color: #135592;
+  border: none;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+#homecontactdiv {
+    margin-top: 20px;
+}
+
+#homesocialmedia, #homecontact {
+  margin-top: 40px;
+}
+
+#homebanner {
+  background: #204782;
+  color: #fff;
+  padding: 60px;
+}
+
 #homegivebtnid {
   display: flex;
   justify-content: left;
@@ -280,6 +305,23 @@ banner
   width: 50%;
   margin: auto;
 }
+
+#homekcileimgdiv {
+  width: 35%;
+  margin: auto;
+}
+
+#homekcileimg {
+  width: 100%;
+}
+
+#homestoreimgdiv {
+  width: 50%;
+  margin: auto;
+}
+
+
+
 
 #homesermonimgdiv {
   width: 100%;
@@ -517,6 +559,9 @@ banner
 #homeourmission {
   margin-top: 10px;
 }
+
+
+
 
 #sectionmargin {
   margin-top: 40px;
