@@ -3,7 +3,7 @@ import { React, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { Container, Col, Row, ButtonGroup, Button } from 'react-bootstrap';
-import "./LiveCountDownTimer.css";
+//import "./LiveCountDownTimer.css";
 import axios  from 'axios';
 import { serverurl } from "../providers/ServerUrl";
 

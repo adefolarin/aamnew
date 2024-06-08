@@ -1,0 +1,17 @@
+#inclasstime p {
+  margin: 0;
+}
+
+#onclasstime p {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    #inclasstime p {
+        margin: 5px;
+      }
+      
+    #onclasstime p {
+        margin: 5px;
+    }
+}

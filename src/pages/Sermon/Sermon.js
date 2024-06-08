@@ -197,360 +197,92 @@ export const Sermon = () => {
        <VideoModal2 show={show} videoid={videoid} handleClose={handleClose} />
 
       <div>
-        <br></br><br></br>
         <div style={{ position: 'relative' }}>
-          <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+          <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
           <div id="banneroverlay">
             <div id="bannerid" className='text-center'>
-              <p id="navhistory">
-                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                <Link to="/sermons" reloadDocument className='text-white' id="currentlink">Sermons</Link>
-              </p>
-              <h4>Sermons</h4>
+              <h4>MESSAGES</h4>
             </div>
           </div>
         </div>
       </div>
       <br></br><br></br>
-      <div>
+
         <Container>
           <Row>
-            <Col md={12}>
-              <Card id="deptcard" className="eventdetailimg">
-                <Card.Img id="" variant="top" src="images/sermonbanner.png" thumbnail />
-              </Card>
-            </Col>
-          </Row>
+        {
+  
+            sermons && sermons.length > 0 && sermons.map((sermonData,index) => {
+          return <>
+                <Col md={4}>
+                <div className='' style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
+                  <iframe style={{ height: '150px', margin: 'auto' }}
+                        src={sermonData.sermons_file}
+                        frameborder="0"
+                        allow="accelerometer; 
+                        autoplay; 
+                        clipboard-write; 
+                        encrypted-media; 
+                        gyroscope; 
+                        picture-in-picture; 
+                        web-share" allowfullscreen>
+                    </iframe>
+                    <div className='livetext'>
+                      <h6 id="bluecolor" className="text-center">{sermonData.sermons_title }</h6>
+                      <p id="bluecolor" className="text-center" style={{ fontSize: '13px' }}>
 
+                        <FontAwesomeIcon icon={faClock} />
+                        &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonData.sermons_date}</span> &nbsp;
 
-          <br></br><br></br>
-          <Row>
+                      </p>
+                  </div>
+                  <div className='livebtn'>
+                    <p>
+                      <ButtonGroup className="me-2" aria-label="First group">
 
+                        
+                        <Link to="#" className='btn btn-danger' id="livevidbtn" onClick={() => {loadVideo(sermonData.sermons_title,sermonData.sermons_file,values)}}>
+                          <FontAwesomeIcon icon={faVideoCamera} />
+                        </Link>
+                        
+
+                        </ButtonGroup>
+                        {/* <ButtonGroup className="me-2" aria-label="First group">
+                      
+                          <Link to={"https://www.youtubepp.com/embed/" + sermonData.id.videoId} className='btn btn-danger' id="vidbtn">
+                            <FontAwesomeIcon icon={faDownload} />
+                          </Link>
+                        </ButtonGroup>
+                        */}
+                        <ButtonGroup className="me-2" aria-label="Second group">
+                          <RWebShare
+                                data={{
+                                    text: "Web Share",
+                                    url: sermonData.sermons_file,
+                                    title: sermonData.sermons_title,
+                                }}
+                                onClick={() =>
+                                    console.log("shared successfully!")
+                                }
+                            >
+                            <Link to="#" className='btn btn-danger' id="livevidbtn">
+                              <FontAwesomeIcon icon={faShareNodes} />
+                            </Link>
+                          </RWebShare>
+                        </ButtonGroup>
+
+                    </p>
+                  </div>
+                  </div>
+                  <br></br>
+                </Col>
+              </>
+            })
+          }
           </Row>
         </Container>
-      </div>
-
-      <br></br><br></br>
-      <Container>
-        <Row>
-          <Col sm={4}><hr style={{ borderTop: '1px solid #848484' }}></hr></Col>
-          <Col sm={4}>
-            <h4 id="bluecolor" class='text-center'>Watch & Listen</h4>
-          </Col>
-          <Col sm={4}><hr style={{ borderTop: '1px solid #848484' }}></hr></Col>
-          <br></br><br></br><br></br>
-
-          <Col sm={12}>
-            <Tab.Container id="mytabs" defaultActiveKey="sermon" className="mytabs">
-              <Nav fill variant="tabs">
-                <Nav.Item className='tabitems'>
-                  <Nav.Link eventKey="sermon" className='tablink' style={{ color: '#fff' }}>SERMONS</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='tabitems'>
-                  <Nav.Link eventKey="podcast" className='tablink' style={{ color: '#fff' }}>PODCASTS</Nav.Link>
-                </Nav.Item>
-                <Nav.Item className='tabitems' style={{ display: 'none' }}>
-                  <Nav.Link eventKey="archived" className='tablink' style={{ color: '#fff' }}>ARCHIVED MESSAGES</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <Tab.Content style={{ marginTop: '20px' }}>
-                <Tab.Pane eventKey="sermon">
-
-                  <SearchFormGroup quicksearch={sermonsearch} sermondate={sermondate} topic={sermontitle} preacher={sermonpreacher} setQuickSearch={setQuickSearch} setSermonDate={setSermonDate} setTopic={setTopic} setPreacher={setPreacher} buttontext={buttontext} getDeepSearch={getDeepSearch} message={message} errormessage={errormessage} successmessage={successmessage} getsermontitle={getsermontitle} getsermonpreacher={getsermonpreacher} getQuickSearch={getQuickSearch} buttontext2={buttontext2} message2={message2} errormessage2={errormessage2} successmessage2={successmessage2} />
-
-
-                  {
-
-                    message != "success" && message2 != "success" ?
-
-                      <Container>
-
-                        {
-
-                          sermons && sermons.length > 0 && sermons.map((sermonData) => {
-                            return <Row>
-                              <div
-                                style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
-                                <Row>
-                                  <Col md={4}>
-                                    <div className=''>
-                                      <iframe style={{ width: '100%', height: '150px', margin: 'auto' }}
-                                        src={sermonData.sermons_file}
-                                        frameborder="0"
-                                        allow="accelerometer; 
-                                autoplay; 
-                                clipboard-write; 
-                                encrypted-media; 
-                                gyroscope; 
-                                picture-in-picture; 
-                                web-share" allowfullscreen>
-                                      </iframe>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <div>
-                                        <h6 id="bluecolor" className="text-center">{sermonData.sermons_title}</h6>
-                                        <p id="bluecolor" className="text-center" style={{ fontSize: '13px' }}>
-                                          <FontAwesomeIcon icon={faUser} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonData.sermons_preacher}</span> &nbsp;
-
-
-                                          <FontAwesomeIcon icon={faClock} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonData.sermons_date}</span> &nbsp;
-
-                                          <br></br>
-                                          <FontAwesomeIcon icon={faLocation} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonData.sermons_location}</span>
-
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <p>
-                                        <ButtonGroup className="me-2" aria-label="First group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn" onClick={() => {loadVideo(sermonData.sermons_title,sermonData.sermons_file,values)}}>
-                                            <FontAwesomeIcon icon={faVideoCamera} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faFileAudio} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faDownload} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                        <RWebShare
-                                              data={{
-                                                  text: "Web Share",
-                                                  url: sermonData.sermons_file,
-                                                  title: sermonData.sermons_title,
-                                              }}
-                                              onClick={() =>
-                                                  console.log("shared successfully!")
-                                              }
-                                         >
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faShareNodes} />
-                                          </Link>
-                                        </RWebShare>
-                                        </ButtonGroup>
-
-                                      </p>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </div>
-                            </Row>
-                          })
-                        }
-                      </Container> :
-
-                      <Container>
-
-                        {
-                          message === "success" && message2 === "" ?
-                          sermon && sermon.length > 0 && sermon.map((sermonSearchDeepData) => {
-                            return <Row>
-                              {
-                              sermonSearchDeepData.sermonsearch_result != "Not Found" ?
-                              <div
-                                style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
-                                <Row>
-                                  <Col md={4}>
-                                    <div className=''>
-                                      <iframe style={{ width: '100%', height: '150px', margin: 'auto' }}
-                                        src={sermonSearchDeepData.sermons_file}
-                                        frameborder="0"
-                                        allow="accelerometer; 
-                              autoplay; 
-                              clipboard-write; 
-                              encrypted-media; 
-                              gyroscope; 
-                              picture-in-picture; 
-                              web-share" allowfullscreen>
-                                      </iframe>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <div>
-                                        <h6 id="bluecolor" className="text-center">{sermonSearchDeepData.sermons_title}</h6>
-                                        <p id="bluecolor" className="text-center" style={{ fontSize: '13px' }}>
-                                          <FontAwesomeIcon icon={faUser} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchDeepData.sermons_preacher}</span> &nbsp;
-
-
-                                          <FontAwesomeIcon icon={faClock} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchDeepData.sermons_date}</span> &nbsp;
-
-                                          <br></br>
-                                          <FontAwesomeIcon icon={faLocation} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchDeepData.sermons_location}</span>
-
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <p>
-                                        <ButtonGroup className="me-2" aria-label="First group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn" onClick={() => {loadVideo(sermonSearchDeepData.sermons_title,sermonSearchDeepData.sermons_file,values)}}>
-                                            <FontAwesomeIcon icon={faVideoCamera} />
-                                          </Link>
-                                        </ButtonGroup>
-                                       {/* <ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faFileAudio} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faDownload} />
-                                          </Link>
-                                        </ButtonGroup>
-                                       */}
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                        <RWebShare
-                                              data={{
-                                                  text: "Web Share",
-                                                  url: sermonSearchDeepData.sermons_file,
-                                                  title: sermonSearchDeepData.sermons_title,
-                                              }}
-                                              onClick={() =>
-                                                  console.log("shared successfully!")
-                                              }
-                                         >
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faShareNodes} />
-                                          </Link>
-                                        </RWebShare>
-                                        </ButtonGroup>
-
-                                      </p>
-                                    </div>
-                                  </Col>
-                                </Row>
-                                
-                              </div> : <p className='text-center'>NO RESULT FOUND</p>
-                               }
-                            </Row>
-                          }) : ''
-                        }
-
-
-                        {
-                          message2 === "success" && message === "" ?
-                          sermon2 && sermon2.length > 0 && sermon2.map((sermonSearchQuickData) => {
-                            return <Row>
-                               {
-                              sermonSearchQuickData.sermonsearch_result != "Not Found" ?
-                              <div
-                                style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
-                                <Row>
-                                  <Col md={4}>
-                                    <div className=''>
-                                      <iframe style={{ width: '100%', height: '150px', margin: 'auto' }}
-                                        src={sermonSearchQuickData.sermons_file}
-                                        frameborder="0"
-                                        allow="accelerometer; 
-                                        autoplay; 
-                                        clipboard-write; 
-                                        encrypted-media; 
-                                        gyroscope; 
-                                        picture-in-picture; 
-                                        web-share" allowfullscreen>
-                                      </iframe>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <div>
-                                        <h6 id="bluecolor" className="text-center">{sermonSearchQuickData.sermons_title}</h6>
-                                        <p id="bluecolor" className="text-center" style={{ fontSize: '13px' }}>
-                                          <FontAwesomeIcon icon={faUser} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchQuickData.sermons_preacher}</span> &nbsp;
-
-
-                                          <FontAwesomeIcon icon={faClock} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchQuickData.sermons_date}</span> &nbsp;
-
-                                          <br></br>
-                                          <FontAwesomeIcon icon={faLocation} />
-                                          &nbsp;<span style={{ color: '#000', fontWeight: '600' }}>{sermonSearchQuickData.sermons_location}</span>
-
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className='valign'>
-                                      <p>
-                                        <ButtonGroup className="me-2" aria-label="First group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn" onClick={() => {loadVideo(sermonSearchQuickData.sermons_title,sermonSearchQuickData.sermons_id,values)}}>
-                                            <FontAwesomeIcon icon={faVideoCamera} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        {/*<ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faFileAudio} />
-                                          </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faDownload} />
-                                          </Link>
-                                        </ButtonGroup>
-                                         */}
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                        <RWebShare
-                                              data={{
-                                                  text: "Web Share",
-                                                  url: sermonSearchQuickData.sermons_file,
-                                                  title: sermonSearchQuickData.sermons_title,
-                                              }}
-                                              onClick={() =>
-                                                  console.log("shared successfully!")
-                                              }
-                                         >
-                                          <Link to="#" className='btn btn-danger' id="vidbtn">
-                                            <FontAwesomeIcon icon={faShareNodes} />
-                                          </Link>
-                                        </RWebShare>
-                                        </ButtonGroup>
-
-                                      </p>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </div> : <p className='text-center'>No Result Found</p>
-                              }
-                            </Row>
-                          }) : ''
-                        }
-                      </Container>
-                  }
-
-
-                </Tab.Pane>
-
-                <Tab.Pane eventKey="podcast">
-                  {/*<Podcasts podcasts={podcasts}/>*/}
-                </Tab.Pane>
-                <Tab.Pane eventKey="archived">ARCHIVED MESSAGES</Tab.Pane>
-              </Tab.Content>
-            </Tab.Container>
-
-          </Col>
-        </Row>
-      </Container>
+   
+  
 
       <br></br><br></br>
 

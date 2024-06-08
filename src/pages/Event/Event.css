@@ -1,0 +1,21 @@
+#eventimg {
+  padding-right: 0;
+}
+
+#eventtext {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    #eventimg {
+        padding-right: 0;
+        padding-right: 0;
+      }
+      
+      #eventtext {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+      }
+ 
+ }

@@ -5,6 +5,7 @@ import { Container, Col, Row, Button, ButtonGroup, ButtonToolbar, Table, Form } 
 import axios from 'axios';
 import { serverurl } from '../../providers/ServerUrl';
 import '../EventDetail.css';
+import './Event.css';
 import Slider from 'react-slick';
 
 export const Event = () => {
@@ -66,16 +67,11 @@ export const Event = () => {
         <div>
 
             <div>
-                <br></br><br></br>
                 <div style={{ position: 'relative' }}>
-                    <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+                    <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <p id="navhistory">
-                                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                                <Link to="events" reloadDocument className='text-white' id="currentlink">Events</Link>
-                            </p>
-                            <h4>Events</h4>
+                            <h4>EVENTS</h4>
                         </div>
                     </div>
                 </div>
@@ -85,24 +81,33 @@ export const Event = () => {
             <Container>
                 <Row>
                     <br></br><br></br><br></br>
-                    <Slider {...settings}>
+                    {/*<Slider {...settings}>*/}
                     {
                         events && events.length > 0 && events.map((eventData) => {
                             return <>
                                 {eventData.events_title !== '' || eventData.events_enddate > eventData.datenow ?
-                                    <Col md={12}>
+                                    <Col md={4}>
                                         <Card id="deptcard" className='deptslide'>
-                                            <Card.Img variant="top" src={eventData.events_file} />
+                                            <Row>
+                                              <Col md={8} id='eventimg'>
+                                                <Card.Img variant="top" src={eventData.events_file} />
+                                              </Col>
+                                              <Col md={4} id='eventtext'>
+                                                <div style={{ backgroundColor:'#204782', color:'#fff', height:'100%', padding:'20px', fontWeight:'bold' }}>
+                                                   <p style={{ color:'#fff' }}>{eventData.events_startdatemonth}</p>
+                                                   <p style={{ color:'#fff' }}>{eventData.events_starttime}</p>
+                                                   <p style={{ color:'#fff' }}></p>
+                                                   <p style={{ color:'#fff' }}></p>
+                                                </div>
+                                              </Col>
+                                            </Row>
                                             <Card.Body className='text-center'>
                                                 <Card.Title>
-                                                    <p className='homeminicalevent'>
-                                                        <ButtonGroup vertical>
-                                                            <Button style={{ backgroundColor: '#d8d8d8', color: '#135592', fontWeight: '800', border: 'none', height: '50px' }}>{eventData.events_startdatemonth}</Button>
-                                                            <Button style={{ backgroundColor: '#135592', color: '#fff', fontWeight: '800', border: 'none', borderRadius: '3px', height: '' }}>{eventData.events_starttime}</Button>
-                                                        </ButtonGroup>
-                                                    </p>
                                                     <h6 id="bluecolor">{eventData.events_title}</h6>
                                                 </Card.Title>
+                                                <p style={{ color:'#000' }}>
+                                                    { eventData.events_desc }
+                                                </p>
                                                 {
                                                 eventData.events_status ?
                                                 <Card.Text style={{ display: 'block' }}>
@@ -115,21 +120,31 @@ export const Event = () => {
                                                     style={{ textDecoration: 'none', color: '#135592', border: '1px solid red', borderRadius: '0', backgroundColor: 'transparent' }} reloadDocument>Event Details</Link>
                                             </Card.Body>
                                         </Card>
-                                    </Col> :
-                                    <Col md={12} style={{display:'none'}}>
-                                        <Card id="deptcard">
-                                            <Card.Body className='text-center'>
-                                                <Card.Title>
-                                                    No Events For Now
-                                                </Card.Title>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
+                                        <br></br>
+                                    </Col> : ''
                                 }
                             </>
                         })
                     }
-                    </Slider>
+                    {/*</Slider>*/}
+                    {
+                    events && events.length > 0 && events.map((eventData) => {
+                        return <>
+                        {eventData.events_title == '' ?
+                        <Col md={12}>
+                        <Card id="deptcard">
+                            <Card.Body className='text-center'>
+                                <Card.Title>
+                                    No Event For Now
+                                </Card.Title>
+                            </Card.Body>
+                        </Card>
+                        </Col> : ''
+                        } 
+                            
+                        </>
+                     })
+                    }
                 </Row>
 
 

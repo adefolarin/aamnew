@@ -195,13 +195,13 @@ export function NavBar() {
               <Nav className="me-auto" id="me-auto">
                 <Nav.Link href="/" className='navLink' id="navLink">HOME</Nav.Link>
                 <Nav.Link href="/about" className='navLink' id="navLink">ABOUT</Nav.Link>
-                <Nav.Link href="/sermon" className='navLink' id="navLink">MESSAGES</Nav.Link>
-                <Nav.Link href="/podcast" className='navLink' id="navLink">PODCAST</Nav.Link>
+                <Nav.Link href="/sermons" className='navLink' id="navLink">MESSAGES</Nav.Link>
+                <Nav.Link href="/podcasts" className='navLink' id="navLink">PODCAST</Nav.Link>
                 <Nav.Link href="#" className='navLink' id="navLink">E-STORE</Nav.Link>
                 <Nav.Link href="/livestream" className='navLink' id="navLink">LIVE STREAM</Nav.Link>
-                <Nav.Link href="/event" className='navLink' id="navLink">EVENT</Nav.Link>
+                <Nav.Link href="/events" className='navLink' id="navLink">EVENT</Nav.Link>
                 <Nav.Link href="/kcile" className='navLink' id="navLink">KCILE</Nav.Link>
-                <Nav.Link href="/kcile" className='navLink' id="navLink">CONTACT US</Nav.Link>
+                <Nav.Link href="/contacts" className='navLink' id="navLink">CONTACT US</Nav.Link>
               </Nav>
               <Nav>       
               <Nav.Link href="/give" className='btn btn-primary' style={{ borderRadius: '5px', backgroundColor: 'red', fontWeight: '700', fontSize: '15px', color:'#fff' }} id="givenavlink">GIVE</Nav.Link>

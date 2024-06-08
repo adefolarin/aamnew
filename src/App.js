@@ -29,6 +29,11 @@ import { Product } from './pages/Product/Product';
 import { Cart } from './pages/Cart/Cart';
 import { CheckOut } from './pages/CheckOut/CheckOut';
 import { Success } from './pages/Success/Success';
+import { LiveStream } from './pages/LiveStream/LiveStream';
+import { EventDetails } from './pages/EventDetails';
+import { Volunteer } from './pages/Volunteer/Volunteer';
+import { Kcile } from './pages/Kcile/Kcile';
+
 
 
 //import logo from './logo.svg';
@@ -65,6 +70,10 @@ function App() {
               <Route path = "/cart" element={<Cart/>}></Route>
               <Route path = "/checkout" element={<CheckOut/>}></Route>
               <Route path = "/success" element={<Success/>}></Route>
+              <Route path = "/livestream" element={<LiveStream/>}></Route>
+              <Route path = "/event-details" element={<EventDetails/>}></Route>
+              <Route path = "/volunteers" element={<Volunteer/>}></Route>
+              <Route path = "/kcile" element={<Kcile/>}></Route>
               <Route path = "/test" element={<Test/>}></Route>
           </Routes>
           <Footer/>
