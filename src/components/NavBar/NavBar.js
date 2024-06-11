@@ -201,7 +201,7 @@ export function NavBar() {
                 <Nav.Link href="/livestream" className='navLink' id="navLink">LIVE STREAM</Nav.Link>
                 <Nav.Link href="/events" className='navLink' id="navLink">EVENT</Nav.Link>
                 <Nav.Link href="/kcile" className='navLink' id="navLink">KCILE</Nav.Link>
-                <Nav.Link href="/contacts" className='navLink' id="navLink">CONTACT US</Nav.Link>
+                <Nav.Link href="/contact" className='navLink' id="navLink">CONTACT US</Nav.Link>
               </Nav>
               <Nav>       
               <Nav.Link href="/give" className='btn btn-primary' style={{ borderRadius: '5px', backgroundColor: 'red', fontWeight: '700', fontSize: '15px', color:'#fff' }} id="givenavlink">GIVE</Nav.Link>

@@ -136,7 +136,7 @@ export const Volunteer = () => {
                       <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
 
                       <Col md={6}>
-                             <Link to='#' reloadDocument id='link'>
+                             <Link to='https://airtable.com/embed/shrCTxmjJa1znRb9P?backgroundColor=cyan' reloadDocument id='link' target='_blank'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -149,7 +149,7 @@ export const Volunteer = () => {
 
                        </Col>
                        <Col md={6}>
-                            <Link to='#' reloadDocument id='link'>
+                            <Link to='https://airtable.com/embed/shr6Jjbb6HAmoActy?backgroundColor=cyan' reloadDocument id='link' target='_blank'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -164,7 +164,7 @@ export const Volunteer = () => {
 
                        <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
                        <Col md={6}>
-                              <Link to='#' reloadDocument id='link'>
+                              <Link to='https://docs.google.com/forms/d/e/1FAIpQLSejbDlGW9ioHs1QQi226ouZHpZZtgqnhocSOEX6ucur--gisA/viewform' reloadDocument id='link' target='_blank'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -177,7 +177,7 @@ export const Volunteer = () => {
                               </Link>
                        </Col>
                        <Col md={6}>
-                             <Link to='#' reloadDocument id='link'>
+                             <Link to='https://docs.google.com/forms/d/e/1FAIpQLSeavNmihUPGulQjn1spkOraRfQJhFlNUrFCuNyfsMFjj3AtrA/viewform' reloadDocument id='link' target='_blank'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -193,7 +193,7 @@ export const Volunteer = () => {
 
                        <Row>
                        <Col md={12}>
-                              <Link to='/foodbank' reloadDocument id='link'>
+                              <Link to='/foodbank' reloadDocument id='link' target='_blank'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">

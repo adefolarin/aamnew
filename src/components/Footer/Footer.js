@@ -126,22 +126,22 @@ export const Footer = () => {
               <div className='' id="footerlinks">
                 <Row>
                   <Col sm={6}>
-                    <p><Link to="/about" id="link">About Us</Link></p>
-                    <p><Link to="/livestream" id="link">Live Service</Link></p>
-                    <p><Link to="/sermons" id="link">Messages</Link></p>
-                    <p><Link to="/give" id="link">Give</Link></p>
-                    <p><Link to="/kcile" id="link">KCILE</Link></p>
-                    <p><Link to="/volunteer" id="link">Volunteer</Link></p>
+                    <p><Link to="/about" id="link" reloadDocument>About Us</Link></p>
+                    <p><Link to="/livestream" id="link" reloadDocument>Live Service</Link></p>
+                    <p><Link to="/sermons" id="link" reloadDocument>Messages</Link></p>
+                    <p><Link to="/give" id="link" reloadDocument>Give</Link></p>
+                    <p><Link to="/kcile" id="link" reloadDocument>KCILE</Link></p>
+                    <p><Link to="/volunteers" id="link" reloadDocument>Volunteer</Link></p>
 
                     
                   </Col>
                   <Col sm={6}>
-                    <p><Link to="/events" id="link">Events</Link></p>
-                    <p><Link to="/foodbank" id="link">Food Bank</Link></p>
-                    <p><Link to="#" id="link">E-Store</Link></p>
-                    <p><Link to="/podcasts" id="link">Podcasts</Link></p>
-                    <p><Link to="/donation" id="link">Donation</Link></p>
-                    <p><Link to="/contacs" id="link">Contact Us</Link></p>
+                    <p><Link to="/events" id="link" reloadDocument>Events</Link></p>
+                    <p><Link to="/foodbank" id="link" reloadDocument>Food Bank</Link></p>
+                    <p><Link to="#" id="link" reloadDocument>E-Store</Link></p>
+                    <p><Link to="/podcasts" id="link" reloadDocument>Podcasts</Link></p>
+                    <p><Link to="/donation" id="link" reloadDocument>Donation</Link></p>
+                    <p><Link to="/contact" id="link" reloadDocument>Contact Us</Link></p>
                   </Col>
                 </Row>
               </div>

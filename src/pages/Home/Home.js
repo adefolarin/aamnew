@@ -748,7 +748,7 @@ export const Home = () => {
         <Container fluid>
           <Row>
             <Col md={12}>
-              <div id='homesermonimgdiv'>
+              <div id='homesermonimgdiv' style={{ backgroundImage: "url(/images/course3.png)", backgroundRepeat:'no-repeat',backgroundSize:'cover', backgroundPosition:'center' }}>
 
                   <div
                     style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>

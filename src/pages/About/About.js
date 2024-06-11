@@ -41,7 +41,7 @@ export const About = () => {
                   </h5>
                   <hr></hr>
                   <p>
-                     We believe the Bible, the complete writings of both the Old and New Testaments is the literal Word of God, verbally inspired by the Holy Spirit, inerrant as originally given by God, and infallible as the standard of our faith and practice.
+                  Our vision is to change nations, one life at a time. We believe in the power of transformation, where every individual has the potential to make a profound impact that reverberates across communities and nations. By focusing on the holistic development of individuals, nurturing their talents, empowering their aspirations, and instilling values of compassion and service, we aim to ignite a ripple effect of positive change that transcends borders and boundaries.
                   </p>
                   </div>
                 </Col>
@@ -53,8 +53,7 @@ export const About = () => {
                     </h5>
                     <hr></hr>
                     <p>
-                    Our mission is reaching and harvesting lost souls for Christ and teaching the Body of Christ how to effectively apply God’s principles to have victory in every area of life. Kingdom Connection Christian Center is a church committed to raising champions in the body of Christ. 
-                    <br></br><br></br>We are here to serve you and to partner with you in any way that the Lord might be leading us. Get in touch with us and let us take the gospel to the ends of the earth together. As we always say, it’s time for you to “GET CONNECTED"
+                    Our mission is to raise champions for kingdom assignment and witness lives transformed. We are committed to nurturing individuals who are not only equipped with the skills and knowledge necessary for their respective callings but are also imbued with a deep sense of purpose and passion for serving the kingdom of God. Through mentorship, discipleship, and empowerment, we seek to cultivate a generation of leaders who are unyielding in their dedication to fulfilling God's purposes and impacting their spheres of influence for the greater good.
                     </p>
                   </div>
                 </Col>
@@ -72,28 +71,21 @@ export const About = () => {
                 <h4>OUR HISTORY</h4>
                 <hr></hr>
                 <p>
-                We are a multi-racial church planted by Hands-On World Missions, reaching out to the international communities of Denver metro area of Colorado State. People from at least 18 countries gather together every week to worship the living God in various languages and styles.We are a multi-racial church planted by Hands-On World Missions, reaching out to the international communities of Denver metro area of Colorado State. People from at least 18 countries gather together every week to worship the living God in various languages and styles
-                What kind of Church is this?
+                At Ade Ajala Ministries, our history is a testament to our unwavering commitment to our mission and vision of raising champions for kingdom assignment and witnessing lives transformed. Founded twenty years ago by a group of passionate individuals driven by a shared calling to make a difference, our organization began as a humble initiative with a bold vision.
+                Over the years, we have embarked on a journey marked by faith, perseverance, and an unwavering belief in the power of God's transformative love. From our early beginnings, where we started with a handful of dedicated volunteers, to the vibrant and thriving community we are today, our trajectory has been guided by a steadfast dedication to our core values of compassion, service, and excellence.
+
                 </p>
 
                 <p>
-                Our belief in God
-                We believe there is one living and true God, the self-existent, sovereign, transcendent, perfect, infinite and eternal creator of the universe. He is revealed in the unity of the Godhead as God the Father, God the Son, and God the Holy Spirit, each having a distinct ministry in relation to His creation and His people..
+                At Ade Ajala Ministries, our history is a testament to our unwavering commitment to our mission and vision of raising champions for kingdom assignment and witnessing lives transformed. Founded twenty years ago by a group of passionate individuals driven by a shared calling to make a difference, our organization began as a humble initiative with a bold vision.
+                Over the years, we have embarked on a journey marked by faith, perseverance, and an unwavering belief in the power of God's transformative love. From our early beginnings, where we started with a handful of dedicated volunteers, to the vibrant and thriving community we are today, our trajectory has been guided by a steadfast dedication to our core values of compassion, service, and excellence.
+
                 </p>
                 
                 <p>
-                Our belief in the Word of God
-                We believe the Bible, the complete writings of both the Old and New Testaments is the literal Word of God, verbally inspired by the Holy Spirit, inerrant as originally given by God, and infallible as the standard of our faith and practice.
-                </p>
+                As we reflect on our journey thus far, we are filled with gratitude for the countless blessings and miracles that have unfolded along the way. From witnessing lives healed and restored to seeing communities revitalized and transformed, every milestone is a testament to the faithfulness of God and the dedication of our incredible team of staff, volunteers, and supporters.
+                Looking ahead, we are filled with excitement and anticipation for the future as we continue to press forward in our mission. With an unwavering commitment to excellence, innovation, and the guiding principles of our mission and vision, we are confident that the best is yet to come. Together, we will continue to write the next chapter of our history—a chapter filled with even greater impact, transformation, and God's abundant blessings.
 
-                <p>
-                Our belief in the nature of man
-                Man was originally created in the image and likeness of God but became a sinful creature by personal rebellion against God and perpetuated a sinful nature to all his descendants. Man is universally sinful by nature and by choice. He is void of spiritual life and incapable of saving himself. He stands under the righteous judgment and wrath of God, condemned to a literal, eternal, and fiery hell
-                </p>
- 
-                <p>               
-                Our belief in salvation
-                Salvation is the free gift of God by grace through faith; it is totally the act of God apart from any work or merit of man.
                 </p>
 
               </div>

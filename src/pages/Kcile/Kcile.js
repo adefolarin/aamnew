@@ -165,7 +165,89 @@ export const Kcile = () => {
                                   </Card.Title>
                               </Card>
                        </Col>
-                       </Row>
+                      </Row>
+
+                      <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
+
+                        <Col md={6}>
+                                <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                    <Card.Title>
+                                        <div className='text-center' id="whitecolor">
+                                            <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            Prayer: How to Finish The <br></br>Bible
+                                            <hr></hr>
+                                            </h5>
+                                            
+                                            <p>An insightful course designed to guide you through the next steps of your newfound faith</p>
+                                        </div>
+                                    </Card.Title>
+                                </Card>
+                        </Col>
+                        <Col md={6}>
+                                <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                    <Card.Title>
+                                        <div className='text-center' id="whitecolor">
+                                            <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            Leadership And <br></br>Follower-ship
+                                            <hr></hr>
+                                            </h5>
+                                        
+                                        <p>An insightful course designed to guide you through the next steps of your newfound faith</p>
+                                        </div>
+                                    </Card.Title>
+                                </Card>
+                        </Col>
+                    </Row>
+
+                      <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
+
+                        <Col md={6}>
+                                <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                    <Card.Title>
+                                        <div className='text-center' id="whitecolor">
+                                            <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            Evangelism
+                                            <hr></hr>
+                                            </h5>
+                                            
+                                            <p>An insightful course designed to guide you through the next steps of your newfound faith</p>
+                                        </div>
+                                    </Card.Title>
+                                </Card>
+                        </Col>
+                        <Col md={6}>
+                                <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                    <Card.Title>
+                                        <div className='text-center' id="whitecolor">
+                                            <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            GIVING
+                                            <hr></hr>
+                                            </h5>
+                                        
+                                        <p>An insightful course designed to guide you through the next steps of your newfound faith</p>
+                                        </div>
+                                    </Card.Title>
+                                </Card>
+                        </Col>
+                      </Row>
+
+                      <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
+
+                        <Col md={12}>
+                                <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                    <Card.Title>
+                                        <div className='text-center' id="whitecolor">
+                                            <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            BAPTISM
+                                            <hr></hr>
+                                            </h5>
+                                            
+                                            <p>An insightful course designed to guide you through the next steps of your newfound faith</p>
+                                        </div>
+                                    </Card.Title>
+                                </Card>
+                        </Col>
+                        </Row>
 
                   </div>
               </Col>
@@ -263,7 +345,7 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Counselling
                                           </h5>
                                       </div>
                                   </Card.Title>
@@ -274,7 +356,7 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Ministry (Practical)
                                           </h5>
                                       </div>
                                   </Card.Title>
@@ -288,7 +370,7 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Brokenness
                                           </h5>
                                       </div>
                                   </Card.Title>
@@ -299,7 +381,7 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Leading in Ministy
                                           </h5>
                                       </div>
                                   </Card.Title>
@@ -310,7 +392,7 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Leading in Business
                                           </h5>
                                       </div>
                                   </Card.Title>
@@ -321,7 +403,32 @@ export const Kcile = () => {
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <h5 style={{ color: '#fff', fontSize: '21px' }}>
-                                            Church <br></br> Doctrine
+                                          Vision & Readiness
+                                          </h5>
+                                      </div>
+                                  </Card.Title>
+                              </Card>
+                       </Col>
+                       </Row>
+
+                       <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
+                       <Col md={6}>
+                              <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                  <Card.Title>
+                                      <div className='text-center' id="whitecolor">
+                                          <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                          Growing Your Gift
+                                          </h5>
+                                      </div>
+                                  </Card.Title>
+                              </Card>
+                       </Col>
+                       <Col md={6}>
+                              <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
+                                  <Card.Title>
+                                      <div className='text-center' id="whitecolor">
+                                          <h5 style={{ color: '#fff', fontSize: '21px' }}>
+                                            Relationship & Marriage
                                           </h5>
                                       </div>
                                   </Card.Title>
