@@ -8,31 +8,14 @@ import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free
 import axios from 'axios';
 import { serverurl } from '../../providers/ServerUrl';
 import '../EventDetail.css';
-import './FoodBank.css';
+import '../FoodBank/FoodBank.css';
 
-export const FoodBank = () => {
+export const KcileReg = () => {
 
-
-    /**********************************************
-       GET THE VOL FORM FROM THE API
-     **********************************************/
-
-    const [volforms, setVolForm] = useState([]);
-
-
-    const fetchVolFormData = () => {
-        return axios.get(serverurl + "/api/volform")
-            .then((response) => setVolForm(response.data['volforms']));
-    };
-
-
-    useEffect(() => {
-        fetchVolFormData();
-    }, [])
 
 
     /**********************************************
-       POST FOOD BANK REG FORM DATA TO THE API
+       POST KCILE REG FORM DATA TO THE API
      **********************************************/
 
     const [buttontext, setButtonText] = useState('Send');
@@ -42,25 +25,42 @@ export const FoodBank = () => {
 
 
     //const [volunteers_type, setVolType] = useState();
-    const [volunteers_name, setVolName] = useState();
-    const [volunteers_email, setVolEmail] = useState();
-    const [volunteers_pnum, setVolPnum] = useState();
+    const [kciles_name, setKcileName] = useState();
+    const [kciles_email, setKcileEmail] = useState();
+    const [kciles_pnum, setKcilePnum] = useState();
+    const [kciles_gender, setKcileGender] = useState();
+    const [kciles_address, setKcileAddress] = useState();
+    const [kciles_country, setKcileCountry] = useState();
+    const [kciles_state, setKcileState] = useState();
+    const [kciles_city, setKcileCity] = useState();
+    const [kciles_zipcode, setKcileZipCode] = useState();
     const [checkedvalue, setCheckedValue] = useState("false");
 
-    const [selecteditem, setSelectedItem] = useState([]);
+    const [kciles_module, setSelectedItem] = useState([]);
+
+
+    const modules = [
+        {name:'Now that you are a Christian'},
+        {name:'How to study the Bible'},
+        {name:'Prayer - How to finish \n the bible'},
+        {name:'Leadership & Fellower-ship'},
+        {name:'Evangelism'},
+        {name:'Giving'},
+        {name:'Baptism'},
+    ];
 
    function checkboxHandler(e) {
       const isSelected = e.target.checked;
       const value = e.target.value;
     
         if(isSelected) {
-            selecteditem.push(value);
-            if(selecteditem.length > 0) {
+            kciles_module.push(value);
+            if(kciles_module.length > 0) {
                setCheckedValue("true");
             }
         } else {
-            selecteditem.splice(value, 1);
-            if(selecteditem.length <= 0) {
+            kciles_module.splice(value, 1);
+            if(kciles_module.length <= 0) {
                 setCheckedValue("false");
             }
         } 
@@ -73,22 +73,22 @@ export const FoodBank = () => {
 
 
 
-    const volunteers_type = "Food Bank";
+    const kciles_moduletype = "MODULE ONE";
 
     const navigate = useNavigate();
 
     const Save = async () => {
         setButtonText("Processing");
-        if(volunteers_type === "" || volunteers_name === "" || volunteers_email === "" || volunteers_pnum === "" || checkedvalue === "false" ) {
+        if(kciles_moduletype === "" || kciles_name === "" || kciles_email === "" || kciles_pnum === "" || checkedvalue === "false" || kciles_gender === "" || kciles_address === "" || kciles_state === "" || kciles_country === "" || kciles_city === "" || kciles_zipcode === "" ) {
             setMessageText("error");
             setErrorMessage("All Fields are Required");
             setButtonText("Send");
         } else {
         try {
-                      
-            const items = { volunteers_type, volunteers_name, volunteers_email, volunteers_pnum, selecteditem };
+                    
+            const items = { kciles_moduletype, kciles_name, kciles_email, kciles_pnum, kciles_gender, kciles_address, kciles_state, kciles_country, kciles_city, kciles_zipcode, kciles_module };
             //console.warn(items);
-            const result = await axios.post(serverurl + "/api/volunteer", items);
+            const result = await axios.post(serverurl + "/api/webregmodule", items);
             setMessageText("success");
             setSuccessMessage(result.data.message);
             setButtonText("Send");
@@ -96,9 +96,9 @@ export const FoodBank = () => {
         
         } catch (error) {
             setMessageText("error");
-            setErrorMessage("!!Sorry, The Volunteer Form Could Not Be Processed");
+            setErrorMessage("!!!Sorry. Something went wrong");
             setButtonText("Send");
-            console.log(error);
+            console.log(kciles_module);
         }
       }
     };
@@ -112,7 +112,7 @@ export const FoodBank = () => {
                     <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <h4> VOLUNTEER REGISTRATION FORM</h4>
+                            <h4> KCILE REGISTRATION FORM</h4>
 
                         </div>
                     </div>
@@ -128,45 +128,81 @@ export const FoodBank = () => {
                             <div>
                                 <Card id="deptcard">
                                     <Card.Header style={{ backgroundColor: '#135592', color: '#fff', fontSize: '20px', textAlign: 'center' }}>
-                                        Volunteer Registration
+                                        KCILE Registration
                                     </Card.Header>
                                     <Card.Body>
                                         <Form>
 
                                             <Form.Group className="mb-3" controlId="">
-                                                <Form.Control type="text" size="lg" placeholder="Full Name" style={{ fontSize: '16px', padding: '15px' }}
-                                                    value={volunteers_name} onChange={(e) => setVolName(e.target.value)} />
+                                                <Form.Label>Full Name</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_name} onChange={(e) => setKcileName(e.target.value)} />
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="">
-                                                <Form.Control type="email" size="lg" placeholder="Email" style={{ fontSize: '16px', padding: '15px' }}
-                                                    value={volunteers_email} onChange={(e) => setVolEmail(e.target.value)} />
+                                            <Form.Label>Email</Form.Label>
+                                                <Form.Control type="email" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_email} onChange={(e) => setKcileEmail(e.target.value)} />
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="">
-                                                <Form.Control type="text" size="lg" placeholder="Pnone Number" style={{ fontSize: '16px', padding: '15px' }}
-                                                    value={volunteers_pnum} onChange={(e) => setVolPnum(e.target.value)} />
+                                            <Form.Label>Phone Number</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_pnum} onChange={(e) => setKcilePnum(e.target.value)} />
                                             </Form.Group>
-                                           
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>Address</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_address} onChange={(e) => setKcileAddress(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>State</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_state} onChange={(e) => setKcileState(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>Country</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_country} onChange={(e) => setKcileCountry(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>City</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_city} onChange={(e) => setKcileCity(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>Zip Code</Form.Label>
+                                                <Form.Control type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                    value={kciles_zipcode} onChange={(e) => setKcileZipCode(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="">
+                                            <Form.Label>Gender</Form.Label>
+                                            <Form.Select type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }} required
+                                                value={kciles_gender} onChange={(e) => setKcileGender(e.target.value)} >
+                                                <option value=''></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </Form.Select>
+                                           </Form.Group>
                                             <Form.Group className="mb-3" controlId="" style={{ border:'1px solid #eee', borderRadius:'5px',padding:'20px' }}>
-                                            <label>Time you will be available(tick all that apply)</label>
+                                            <label>Select Courses</label>
                                             <br></br><br></br>
                                             {
-                                            volforms.length > 0 && volforms.map((volFormData,index) => {
+                                            modules.length > 0 && modules.map((moduleData,index) => {
                                             return <Form.Check
                                                     
                                                     inline
-                                                    label={volFormData.volforms_time}
+                                                    label={moduleData.name}
                                                     type='checkbox'
                                                     
-                                                    value={volFormData.volforms_time}
-                                                    name="volunteers_time"
+                                                    value={moduleData.name}
+                                                    name="modules_name"
                                                     
                                                     onChange={checkboxHandler}
                                                   
                                                 />
                                                 
                                              })
-                                            }
-
+                                            }                                                
+                                    
                                             <Form.Control
                                               value={checkedvalue} style={{ display:'none' }}
                                             />

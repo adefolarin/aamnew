@@ -5,6 +5,7 @@ import { Container, Col, Row, Button, ButtonGroup, ButtonToolbar, Table, Form } 
 import axios from 'axios';
 import copy from "copy-to-clipboard";
 import { serverurl, clienturl } from '../../providers/ServerUrl';
+import './Volunteer.css'; 
 
 export const Volunteer = () => {
 
@@ -129,10 +130,13 @@ export const Volunteer = () => {
           <Row>
               <Col md={12}>
                   <div>
+                  <p className='text-center' style={{ fontStyle:'italic', fontSize:'18px',fontWeight:'bold' }}>Please choose the program you wish to volunteer for from the options below and<br></br> complete the form</p>
                       <br></br>
+                     
                       <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
 
                       <Col md={6}>
+                             <Link to='#' reloadDocument id='link'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -141,8 +145,11 @@ export const Volunteer = () => {
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
+
                        </Col>
                        <Col md={6}>
+                            <Link to='#' reloadDocument id='link'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -151,11 +158,13 @@ export const Volunteer = () => {
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                        </Col>
                        </Row>
 
                        <Row style={{ marginTop:'10px', marginBottom:'10px' }}>
                        <Col md={6}>
+                              <Link to='#' reloadDocument id='link'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -165,8 +174,10 @@ export const Volunteer = () => {
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                        </Col>
                        <Col md={6}>
+                             <Link to='#' reloadDocument id='link'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -176,11 +187,13 @@ export const Volunteer = () => {
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                        </Col>
                        </Row>
 
                        <Row>
-                       <Col md={6}>
+                       <Col md={12}>
+                              <Link to='/foodbank' reloadDocument id='link'>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
@@ -190,8 +203,9 @@ export const Volunteer = () => {
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                        </Col>
-                       <Col md={6}>
+                       <Col md={6} style={{ display:'none' }}>
                               <Card id="deptcard" style={{ backgroundColor: '#204782', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">

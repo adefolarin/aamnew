@@ -64,19 +64,22 @@ export const Contact = () => {
         <div>
 
             <div>
-                <br></br><br></br>
                 <div style={{ position: 'relative' }}>
-                    <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+                    <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <p id="navhistory">
-                                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                                <Link to="/contact" reloadDocument className='text-white' id="currentlink">CONTACT</Link>
-                            </p>
-                            <h4>Contact Us</h4>
+                            <h4>CONTACT</h4>
                         </div>
                     </div>
                 </div>
+            </div>
+           
+            <br></br><br></br>
+            <div>
+                <h5 className='text-center' id='bluecolor'>Contact Us</h5>
+                <hr style={{ width:'10%',margin:'auto',borderTop:'1px solid red' }}></hr>
+                <br></br>
+                <p className='text-center' style={{ fontWeight:'bold', fontSize:'17px' }}>Thank you for showing interest in our ministries</p>
             </div>
 
             <br></br><br></br>
@@ -88,12 +91,12 @@ export const Contact = () => {
                             <Row>
 
                                 <Col md={4}>
-                                    <Card id="deptcard" style={{ backgroundColor: '#135592', color: '#fff', padding: '38px' }}>
+                                    <Card id="deptcard" style={{ backgroundColor: '#fff', color: '#135592', padding: '38px' }}>
                                         <Card.Title>
                                             <div className='text-center' id="bluecolor">
-                                                <button className='btn' style={{ backgroundColor: '#fff', color: '#135592', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faAddressBook} /></button>
+                                                <button className='btn' style={{ backgroundColor: '#135592', color: '#fff', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faAddressBook} /></button>
                                                 <br></br><br></br>
-                                                <h5 style={{ color: '#fff', fontSize: '18px' }}>1391, Oswego Street, Aurora CO 80010</h5>
+                                                <h5 style={{ color: '#135592', fontSize: '18px' }}>1391, Oswego Street, Aurora CO 80010</h5>
                                             </div>
                                         </Card.Title>
                                     </Card>
@@ -113,12 +116,12 @@ export const Contact = () => {
                                 </Col>
 
                                 <Col md={4}>
-                                    <Card id="deptcard" style={{ backgroundColor: '#135592', color: '#fff', padding: '50px' }}>
+                                    <Card id="deptcard" style={{ backgroundColor: '#fff', color: '#135592', padding: '50px' }}>
                                         <Card.Title>
                                             <div className='text-center' id="bluecolor">
-                                                <button className='btn' style={{ backgroundColor: '#fff', color: '#135592', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faEnvelope} /></button>
+                                                <button className='btn' style={{ backgroundColor: '#135592', color: '#fff', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faEnvelope} /></button>
                                                 <br></br><br></br>
-                                                <h5 style={{ color: '#fff', fontSize: '18px' }}> info@kccconline.org</h5>
+                                                <h5 style={{ color: '#135592', fontSize: '18px' }}> info@kccconline.org</h5>
                                             </div>
                                         </Card.Title>
                                     </Card>

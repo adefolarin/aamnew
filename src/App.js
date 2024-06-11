@@ -33,6 +33,7 @@ import { LiveStream } from './pages/LiveStream/LiveStream';
 import { EventDetails } from './pages/EventDetails';
 import { Volunteer } from './pages/Volunteer/Volunteer';
 import { Kcile } from './pages/Kcile/Kcile';
+import { KcileReg } from './pages/KcileReg/KcileReg';
 
 
 
@@ -74,6 +75,7 @@ function App() {
               <Route path = "/event-details" element={<EventDetails/>}></Route>
               <Route path = "/volunteers" element={<Volunteer/>}></Route>
               <Route path = "/kcile" element={<Kcile/>}></Route>
+              <Route path = "/kcilereg" element={<KcileReg/>}></Route>
               <Route path = "/test" element={<Test/>}></Route>
           </Routes>
           <Footer/>

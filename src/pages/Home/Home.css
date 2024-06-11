@@ -313,6 +313,7 @@ banner
 
 #homekcileimg {
   width: 100%;
+  margin-top: 40px;
 }
 
 #homestoreimgdiv {
@@ -452,6 +453,10 @@ banner
 
 
 @media screen and (max-width: 767px) {
+
+  .homepodcast {
+    text-align: center;
+  }
 
   .caption {
     text-align: center;

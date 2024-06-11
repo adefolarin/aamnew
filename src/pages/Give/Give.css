@@ -1,23 +1,23 @@
 
 .givecard {
-    background-color: #135592;
+    background-color: #d8d8d8;
     color: #fff;
 }
 
 #giveformid {
     font-size: 16px; 
     padding: 15px;
-    background-color:#3878A3; 
+    background-color:#eee; 
     border:none; 
-    color:#fff;
+    color:#000;
 }
 
 #giveformid :not(active){
-    color:white;
+    color: #000;;
  }
 
  #giveformid :focus{
-    color:white;
+    color: #000;;
  }
 
  #givebtn {

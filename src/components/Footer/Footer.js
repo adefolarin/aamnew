@@ -63,9 +63,9 @@ export const Footer = () => {
                 <br></br><br></br>
                 <div>
                   <p>
-                  The Wealthy Place Where Champions Are Raised.
-                  Kingdom Connection Christian Center is a Word of Faith, 
-                  non-denominational, full gospel church.
+                  Changing nations, one life at a time.
+                  Our mission is to raise champions for
+                  kingdom assignment and see lives tranformed.
 
 
                   </p>
@@ -85,7 +85,7 @@ export const Footer = () => {
                   </div>
                   <div>
                     <p>
-                      <FontAwesomeIcon icon={faEnvelope} />&nbsp; info@kccconline.org
+                      <FontAwesomeIcon icon={faEnvelope} />&nbsp; info@adeajalaministries.org
                     </p>
                   </div>
                 </div>
@@ -126,31 +126,33 @@ export const Footer = () => {
               <div className='' id="footerlinks">
                 <Row>
                   <Col sm={6}>
+                    <p><Link to="/about" id="link">About Us</Link></p>
                     <p><Link to="/livestream" id="link">Live Service</Link></p>
-                    <p><Link to="/events" id="link">Our Events</Link></p>
-                    <p><Link to="/store" id="link">E Store</Link></p>
-                    <p><Link to="/departments" id="link">Departments</Link></p>
-                    <p><Link to="/review" id="link" reloadDocument>Year In Review</Link></p>
+                    <p><Link to="/sermons" id="link">Messages</Link></p>
                     <p><Link to="/give" id="link">Give</Link></p>
+                    <p><Link to="/kcile" id="link">KCILE</Link></p>
+                    <p><Link to="/volunteer" id="link">Volunteer</Link></p>
+
+                    
                   </Col>
                   <Col sm={6}>
-                    <p><Link to="/about" id="link">Welcome Message</Link></p>
-                    <p><Link to="/about" id="link">Our Mission</Link></p>
+                    <p><Link to="/events" id="link">Events</Link></p>
                     <p><Link to="/foodbank" id="link">Food Bank</Link></p>
-                    <p><Link to="/sermons" id="link">Sermons</Link></p>
+                    <p><Link to="#" id="link">E-Store</Link></p>
                     <p><Link to="/podcasts" id="link">Podcasts</Link></p>
-                    <p><Link to="/donation" id="link">Donate</Link></p>
+                    <p><Link to="/donation" id="link">Donation</Link></p>
+                    <p><Link to="/contacs" id="link">Contact Us</Link></p>
                   </Col>
                 </Row>
               </div>
             </Col>
-
+ 
             <Col sm={12} md={4}>
               <div id="letterid">
                 <h5 className='text-center'>NEWS LETTER</h5>
                 <br></br>
                 <p>
-                  Sign up to newsletter to stay updated on all news and events at KCCC. Email updates on new publications, announcements and lots more. We promise we won't spam your box.
+                  Sign up to newsletter to stay updated on all news and events at Ade-Ajala Ministries. Email updates on new publications, announcements and lots more. We promise we won't spam your box.
                 </p>
                 <br></br>
                 <div>
@@ -201,7 +203,7 @@ export const Footer = () => {
           <Row>
             <Col sm={12}>
               <p className='text-center' style={{ fontSize: '13px' }}>
-                Copyright  &copy; KCCC 2024. All Right Reserved.
+                Copyright  &copy; Ade-Ajala Ministries 2024. All Right Reserved.
               </p>
             </Col>
           </Row>

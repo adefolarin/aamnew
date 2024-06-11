@@ -266,7 +266,7 @@ export const Home = () => {
                         <br></br>
                         <Link to='/livestream' reloadDocument className='btn btn-danger' id='btn'>JOIN SERVICE</Link>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                      <Link to='/event' reloadDocument className='btn btn-danger' id='btn'>UPCOMING EVENT</Link>
+                      <Link to='/events' reloadDocument className='btn btn-danger' id='btn'>UPCOMING EVENT</Link>
                       </div>
                       </Col>
                       <Col md={6}>
@@ -299,55 +299,75 @@ export const Home = () => {
       <Row>
           <Col md={12}>
                         
-                        <h4 id="bluecolor" class='text-center'>About The Author</h4>
-                        <hr style={{ borderTop: '2px solid red',width:'10%',margin:'auto' }}></hr>
+                <h4 id="bluecolor" class='text-center'>About Us</h4>
+                <hr style={{ borderTop: '2px solid red',width:'10%',margin:'auto' }}></hr>
            </Col>
-                    <br></br><br></br><br></br>
+                <br></br><br></br><br></br>
       </Row>
       </Container>
       <Fade delay={300} duration={2000}>
         <Container>
           <Row>
-            <Col md={5}>
+            <Col md={6}>
               <div id='homeaboutimgdiv'>
-              <Image src="images/about.png" thumbnail fluid id="homeaboutimg" />
+              <Image src="images/bishop.png" thumbnail fluid id="homeaboutimg" />
               </div>
 
             </Col>
-            <Col md={7}>
+            <Col md={6}>
             <Row>
                 <div style={{ marginTop: '20px' }}></div>
                 <Col sm={12}>
                   <br></br>
                   <div id="homeourmission">
+                    <Row>
+                    <Col md={2}>
+                    <div>
                     <h5 id="bluecolor">
-                      <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
-                        <FontAwesomeIcon icon={faBible} style={{ color: '#fff', fontSize: '14px' }} />
+                      <Button style={{ backgroundColor: 'red', border: 'none' }}>
+                        <FontAwesomeIcon icon={faBible} style={{ color: '#fff', fontSize: '40px' }} />
 
-                      </Button> &nbsp; &nbsp; Our Mission
+                      </Button>
                     </h5>
+                    </div>
+                    </Col>
+                    <Col md={10}>
+                    <div>
                     <p>
-                    Our mission is to raise champions for kingdom assignment and see lives transformed.
+                    <h5 id='bluecolor'>Our Mission</h5>
+                    Our mission is to raise champions <br></br>for kingdom assignment and see<br></br>
+                    lives transformed.
                     </p>
+                    </div>
+                    </Col>
+                    </Row>
                   </div>
                 </Col>
                 <Col sm={12}>
+                <Row>
+                  <Col md={2}>
+                  <div>
                   <h5 id="bluecolor">
-                    <Button style={{ borderRadius: '50px', backgroundColor: 'red', border: 'none' }}>
-                      <FontAwesomeIcon icon={faHeart} style={{ color: '#fff', fontSize: '14px' }} />
+                    <Button style={{ backgroundColor: 'red', border: 'none' }}>
+                      <FontAwesomeIcon icon={faHeart} style={{ color: '#fff', fontSize: '40px' }} />
 
-                    </Button> &nbsp; &nbsp; Our Vision
+                    </Button>
                   </h5>
+                  </div>
+                  </Col>
+                  <Col md={10}>
+                  <div>
+                  <h5 id='bluecolor'>Our Vision</h5>
                   <p>
-                     Changing nations, one life at a time
+                     Changing nations, one life at a <br></br>time
                   </p>
+                  <br></br>
+                  <Link to='/about' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
+                  </div>
+                  </Col>
+                </Row>
                 </Col>
             </Row>
-               <Row>
-                <Col sm={12}>
-                  <Link to='/about' reloadDocument className='btn btn-danger' id='btn'>Read More</Link>
-                </Col>
-              </Row>
             </Col>
           </Row>
         </Container>
@@ -364,42 +384,48 @@ export const Home = () => {
                       <Row>
 
                       <Col md={4}>
+                             <Link to='/donation' reloadDocument style={{ textDecoration:'none' }}>
                               <Card id="deptcard" style={{ backgroundColor: '#000080', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <button className='btn' style={{ backgroundColor: '#fff', color: '#000080', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faGift} /></button>
                                           <br></br><br></br>
                                           <h5 style={{ color: '#fff', fontSize: '18px' }}>Donate</h5>
-                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                          <p>With your support, we can continue spreading God's love, reaching out to those in need, and making a positive impact in our community and beyond.<br></br></p>
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                           </Col>
 
                           <Col md={4}>
+                             <Link to='/giving' reloadDocument style={{ textDecoration:'none' }}>
                               <Card id="deptcard" style={{ backgroundColor: '#FF4500', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <button className='btn' style={{ backgroundColor: '#fff', color: '#FF4500', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faDollar} /></button>
                                           <br></br><br></br>
                                           <h5 style={{ color: '#fff', fontSize: '18px' }}>Give</h5>
-                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                          <p>Your giving is a powerful act of worship and generosity. You are not only supporting the work of God's kingdom but also sowing seeds of blessings in your own life.<br></br></p>
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                           </Col>
 
                           <Col md={4}>
+                             <Link to='/volunteers' reloadDocument style={{ textDecoration:'none' }}>
                               <Card id="deptcard" style={{ backgroundColor: '#0085FF', color: '#fff', padding: '50px' }}>
                                   <Card.Title>
                                       <div className='text-center' id="whitecolor">
                                           <button className='btn' style={{ backgroundColor: '#fff', color: '#0085FF', borderRadius: '50%', marginTop: '10px', marginBottom: '10px', fontSize: '20px' }}><FontAwesomeIcon icon={faHeart} /></button>
                                           <br></br><br></br>
                                           <h5 style={{ color: '#fff', fontSize: '18px' }}>Volunteer</h5>
-                                          <p>kssksieieieie eeieiei eieieieie eioe e<br></br></p>
+                                          <p>Your giving is a powerful act of worship and generosity. You are not only supporting the work of God's kingdom but also sowing seeds of blessings in your own life.<br></br></p>
                                       </div>
                                   </Card.Title>
                               </Card>
+                              </Link>
                           </Col>
 
 
@@ -421,7 +447,7 @@ export const Home = () => {
             <Col md={6}>
               <div id="downloaddiv">
               <h4 id="whitecolor" className='text-center'>ADE-AJALA MOBILE APP</h4>
-              <p id="whitecolor">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
+              <p id="whitecolor">Experience the convenience of staying connected with Ade-Ajala Ministries wherever you go by downloading our mobile app. With our app, you can access a wealth of spiritual resources, inspiration, and community engagement features right at your fingertips.</p>
             
                 <div className='text-center'>
                   <ButtonGroup className="me-2" aria-label="First group">
@@ -448,21 +474,20 @@ export const Home = () => {
         </Fade>
       </div>
 
-
+       <br></br><br></br>
        {/*  LIVE STREAM    */}
       <div>
         <Fade delay={300} duration={2000}>
         <Container style={{ backgroundColor: '#000', margin: '0px' }} fluid>
         <div style={{ position: 'relative' }}>
-            <Image fluid src="images/img3.jpg" alt="Card image" style={{ width: '100%', height: '270px' }} />
-            <div id="overlay" style={{ position: 'absolute', width: '100%', height: '100%', top: '0', bottom: '0', right: '0', left: '0', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+            <div id="overlay" style={{ position: '', width: '100%', height: '100%', top: '0', bottom: '0', right: '0', left: '0', backgroundColor: '#204782' }}>
               <Row>
                 <Col md={8}>
                   <div id="faithid">
                     <h4 id="whitecolor">GET CONNTECTED WITH<br></br>
                      BISHOP ISREAL ADE-AJALA
                     </h4>
-                    <p id="whitecolor">EVERY FRIDAY BY 12:30pm</p>
+                    <p id="whitecolor" style={{ fontWeight:'bold' }}>EVERY FRIDAY BY 12:30pm</p>
                     <p id='joinuslive'>
                     <div id="homegivebtnid">
                       <Link to="/livestrea" className='btn btn-danger' id="homegivebtn" reloadDocument>
@@ -527,10 +552,10 @@ export const Home = () => {
                           {sermonData.sermons_date}
                         </p>
                         <h6>{sermonData.sermons_title}</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                        <p>Join us as we journey together in faith, seeking God's presence and sharing His love with the world. No matter where you are in your spiritual journey, you are welcome here at Ade Ajala Ministries. We look forward to walking alongside you as we grow together in Christ.</p>
                       </div>
                       <div>
-                      <Link to='/sermon' reloadDocument className='btn btn-danger' id='btn'>Discover More</Link>
+                      <Link to='/sermons' reloadDocument className='btn btn-danger' id='btn'>DISCOVER MORE</Link>
                       </div>
                     </Col>
                  </Row>
@@ -563,7 +588,7 @@ export const Home = () => {
                             return <>
                                 {podcastsData.podcasts_title !== '' ?
                                     <Row style={{ backgroundColor: '#fff' }}>
-                                      <h5 id="bluecolor">PODCAST</h5>
+                                      <h5 id="bluecolor" className='homepodcast'>PODCAST</h5>
                                         <div
                                             style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '30px' }}>
                                             <Row>
@@ -589,7 +614,7 @@ export const Home = () => {
                                                         <div>
                                                             <p className='text-center'>
                                                                 <ButtonGroup className="me-2" aria-label="Second group" style={{ color: 'red' }}>
-                                                                <Link to='/podcast' reloadDocument className='btn btn-danger' id='btn'>Listen More</Link>
+                                                                <Link to='/podcast' reloadDocument className='btn btn-danger' id='btn'>LISTEN MORE</Link>
 
                                                                 </ButtonGroup>
                                                             </p>
@@ -642,7 +667,9 @@ export const Home = () => {
                         <h5 id="bluecolor">
                           KINGDOM CONNTECTION INSTITUTE <br></br>LIFE EMPOWERMENT
                         </h5>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                        <p style={{ style:'#000', fontSize:'16px' }}>Welcome to Kingdom Connection Institute - your gateway to life empowerment and spiritual growth. Our institute is dedicated to providing transformative teachings and resources that empower individuals to live purposefully and abundantly in alignment with God's kingdom principles.
+                        At Kingdom Connection Institute, we offer a range of life empowerment programs designed to nurture personal development, spiritual growth, and leadership skills. Through dynamic teachings, practical workshops, and impactful resources, we equip individuals with the tools and insights needed to navigate life's challenges and unlock their full potentials.
+                        </p>
                       </div>
                       <div>
                       <Link to='/kcile' reloadDocument className='btn btn-danger' id='btn'>Apply Now</Link>
@@ -681,20 +708,20 @@ export const Home = () => {
                   <div
                     style={{ borderRadius: '0px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', padding: '20px' }}>
                  <Row>
-                      <Col md={6}>
+                      <Col md={5}>
                         <div className=''>
                         <div id='homestoreimgdiv'>
-                           <Image src="images/about.png" thumbnail fluid id="homeaboutimg" />
+                           <Image src="images/estore.png" thumbnail fluid id="homeaboutimg" />
                         </div>
                         </div>
                       </Col>
-                      <Col sm={6}>
+                      <Col sm={7}>
                       <br></br>
                       <div id="homeourmission">
                         <h5 id="bluecolor">
                           E-STORE
                         </h5>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                        <p>Welcome to our e-store, where faith meets literature in a harmonious blend of inspiration and knowledge. Dive into a world where words ignite the spirit and illuminate the path to enlightenment. Our collection of faith-filled books is carefully curated to cater to the spiritual seeker, the devout believer, and the curious soul alike.</p>
                       </div>
                       <div>
                       <Link to='#' reloadDocument className='btn btn-danger' id='btn'>EXPLORE MORE</Link>
@@ -832,7 +859,7 @@ export const Home = () => {
 
                       <Col sm={6}>
                       <div id="homecontactdiv">
-                        <p style={{ color:'#fff' }}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>
+                        <p style={{ color:'#fff' }}>At Ade-Ajala Ministries, we value your feedback, enquiries and <br></br>connections. Reach out to us effortlessly through email or any <br></br> of our active social media platform.</p>
                       </div>
                       </Col>
                       <Col md={4}>

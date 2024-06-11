@@ -16,7 +16,7 @@ export const VideoModal2 = ({show,handleClose,videoid}) => {
       </Modal.Title>
     </Modal.Header>
     <Modal.Body>
-    <iframe 
+    <iframe  
           id="frameid2"
           src={videoid}
           frameborder="0"

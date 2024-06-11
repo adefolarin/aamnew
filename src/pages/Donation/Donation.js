@@ -10,11 +10,11 @@ import axios from 'axios';
 import { serverurl } from '../../providers/ServerUrl';
 //import ReactDOM from "react-dom";
 import './Donation.css';
-import { PaymentImages } from '../../components/PaymentImages';
 
 import { useSignal } from '@preact/signals-react';
 
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { PaymentImages } from '../../components/PaymentImages';
 
 
 export const Donation = () => {
@@ -29,7 +29,7 @@ export const Donation = () => {
 
     const fetchDonationCategoryData = () => {
         return axios.get(serverurl + "/api/donationcategory")
-            .then((response) => setDonationsCategory(response.data['donationcategories']));
+            .then((response) => setDonationCategory(response.data['donationcategories']));
 
     };
 
@@ -59,6 +59,31 @@ export const Donation = () => {
        const handleInputChange = (e) => {
           setDonationAmount(e.target.value);
        }
+
+       const handleButtonChange50 = (e) => {
+        setDonationAmount(e.target.value);
+        console.log(e.target.value);
+     }
+     const handleButtonChange100 = (e) => {
+        setDonationAmount(e.target.value);
+      console.log(e.target.value);
+      }
+      const handleButtonChange500 = (e) => {
+        setDonationAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange200 = (e) => {
+        setDonationAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange1000 = (e) => {
+        setDonationAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange10000 = (e) => {
+          setDonationAmount(e.target.value);
+          console.log(e.target.value);
+      }
 
       useEffect(() => {
         parseInt(localStorage.setItem('donations_amount', donations_amount));
@@ -101,6 +126,13 @@ export const Donation = () => {
           
        }
 
+       /*const donations_name = "Sam Tomi";
+       const donations_email = "sam@gmail.com";
+       const donations_pnum = "0903030303";
+       const donations_type = "Offering";
+       const donations_amount = 350;
+       const donations_reference = "34556";
+       const donations_status =  "Paid";*/
 
        const onApproveOrder  = (data, actions) => {
            // Capture the funds from the transaction
@@ -146,27 +178,27 @@ export const Donation = () => {
 
        const onCancel = () => {
         setErrorMessages("You cancelled the transaction");
-       }
+      }
 
+      const [showpaypal, setShowPaypal] = useState(false);
+      const [showzelle, setShowZelle] = useState(false);
+      const [paymentplatform, setPaymentPlatform] = useState();
 
-     const [showpaypal, setShowPaypal] = useState(false);
-     const [showzelle, setShowZelle] = useState(false);
-     const [paymentplatform, setPaymentPlatform] = useState();
+      const handleSelectChange = (e) => {
+        setPaymentPlatform(e.target.value);
+        if(e.target.value === "paypal") {
+            setShowPaypal(true);
+            setShowZelle(false);
+        } else if(e.target.value === "zelle")  {
+            setShowPaypal(false);
+            setShowZelle(true);
+        } else {
+            setShowPaypal(false);
+            setShowZelle(false);
 
-     const handleSelectChange = (e) => {
-       setPaymentPlatform(e.target.value);
-       if(e.target.value === "paypal") {
-           setShowPaypal(true);
-           setShowZelle(false);
-       } else if(e.target.value === "zelle")  {
-           setShowPaypal(false);
-           setShowZelle(true);
-       } else {
-           setShowPaypal(false);
-           setShowZelle(false);
+        }
+     }
 
-       }
-    }
    
 
     return (
@@ -175,104 +207,85 @@ export const Donation = () => {
   
 
             <div>
-                <br></br><br></br>
                 <div style={{ position: 'relative' }}>
-                    <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+                    <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <p id="navhistory">
-                                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                                <Link to="/donation" reloadDocument className='text-white' id="currentlink">Donation</Link>
-                            </p>
-                            <h4>Donation</h4>
+                            <h4>GIVE</h4>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <br></br><br></br>
-
+            <br></br>
 
             <div>
                 <Container>
                     <Row>
-                        <Col md={3}></Col>
-                        <Col md={6}>
+                        <Col md={12}>
                             <Card id="deptcard" className='donationcard'>
-                                {/*<Card.Header style={{ backgroundColor: '#135592', color: '#fff', fontSize: '20px', textAlign: 'center' }}>
-                                    Donation
-                                </Card.Header>*/}
                                 <Card.Body>
                                     <Form>
 
                                     <InputGroup className="mb-3" controlId="">
-                                            <Form.Control type="text" size="lg" placeholder="Enter Amount" name="donations_amount"
+                                            <Form.Control type="text" size="lg" placeholder="Enter Amount" name="donations_amount" id='donationformid'
                                                 value={donations_amount} 
-                                                onChange={handleInputChange} required id="donationformid" />
+                                                onChange={handleInputChange} required />
                                     </InputGroup>
-
-                                   <br></br>
+                                  <br></br>
                                    <div className='text-center'>
-                                    <ButtonGroup className="me-2" aria-label="First group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                   <ButtonGroup className="me-2" aria-label="First group">
+                                        <Button to="#" className='btn btn-danger' id="donationbtn" 
+                                        onClick={handleButtonChange50} value={50} >
                                             $50
-                                        </Link>
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="donationbtn"
+                                        onClick={handleButtonChange100} value={100} >
                                             $100
-                                        </Link>
-
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="donationbtn" 
+                                        onClick={handleButtonChange200} value={200}>
+                                            $200
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="donationbtn" 
+                                        onClick={handleButtonChange500} value={500}>
+                                            $500
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="donationbtn" 
+                                        onClick={handleButtonChange1000} value={1000} >
                                             $1000
-                                        </Link>
+                                        </Button>
                                     </ButtonGroup>
                                    </div>
                             
-                                    <br></br><br></br>
-                                    <div className='text-center'>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                            <Link to="#" className='btn btn-danger' id="givebtn">
-                                                $200
-                                            </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                            <Link to="#" className='btn btn-danger' id="givebtn">
-                                                $500
-                                            </Link>
-                                        </ButtonGroup>
-                                        <ButtonGroup className="me-2" aria-label="Second group">
-                                            <Link to="#" className='btn btn-danger' id="givebtn">
-                                                $10000
-                                            </Link>
-                                        </ButtonGroup>
-                                    </div>
-                                    <br></br>
-                                     {
+                                <br></br>
+                                      {
                                        showzelle === false ?
                                        <div>
-                                      <InputGroup className="mb-3" controlId="">
+                                       <InputGroup className="mb-3" controlId="">
                                             <Form.Control type="text" size="lg" placeholder="Full Name" style={{ fontSize: '16px', padding: '15px' }}
-                                                value={donations_name} onChange={(e) => setDonationName(e.target.value)} required id="donationformid" />
+                                                value={donations_name} onChange={(e) => setDonationName(e.target.value)} required id='donationformid'/>
                                         </InputGroup>
 
                                         <InputGroup className="mb-3" controlId="">      
                                             <Form.Control type="email" size="lg" placeholder="Email" style={{ fontSize: '16px', padding: '15px' }}
-                                                value={donations_email} onChange={(e) => setDonationEmail(e.target.value)} required id="donationformid"  />
+                                                value={donations_email} onChange={(e) => setDonationEmail(e.target.value)} required id='donationformid'/>
                                       
                                         </InputGroup>
 
                                         <InputGroup className="mb-3" controlId="">
                                             <Form.Control type="text" size="lg" placeholder="Pnone Number" style={{ fontSize: '16px', padding: '15px' }}
-                                                value={donations_pnum} onChange={(e) => setDonationPnum(e.target.value)} required id="donationformid" />
+                                                value={donations_pnum} onChange={(e) => setDonationPnum(e.target.value)} required id='donationformid'/>
                                         </InputGroup>
 
                                         
                                         <InputGroup>
                                         <Form.Select type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }}
-                                                value={donations_type} onChange={(e) => setDonationCategory(e.target.value)} required id="donationformid" >
+                                                value={donations_type} onChange={(e) => setDonationCategory(e.target.value)} required id='donationformid'>
                                                 <option value=''>Select Donation Category</option>
                                                 {
                                                 donationcategory && donationcategory.length > 0 && donationcategory.map((donationCatData, index) => {
@@ -288,20 +301,21 @@ export const Donation = () => {
                                         </InputGroup>
                                         </div> : ''
                                         }
-                                        <br></br>
+                                        
 
-                                    
+                                         <br></br>
                                         <InputGroup>
                                         <Form.Select type="text" size="lg" style={{ fontSize: '16px', padding: '15px' }}
                                                 value={paymentplatform} onChange={handleSelectChange} required id='donationformid'>
                                                 <option value=''>Select Payment Platform</option>
                                                 <option value='paypal'>PayPal</option>
-                                                <option value='zelle'>Zelle</option>
+                                                <option value='zelle'>Others</option>
                                                 
                                         </Form.Select>
                                         </InputGroup>
                                         <br></br>
-                                      
+
+                                     
 
                                     </Form>
 
@@ -322,14 +336,20 @@ export const Donation = () => {
 
                                     </div>
 
+
                                     <div>
 
                                     {
                                     showzelle ? 
                                     (
-                                    <div className='alert alert-success' style={{ fontWeight:'bold' }}>
-                                        Make the payment of ${donations_amount} to following Zelle account: donation@kccconline.org
-                                    </div>
+                                        <div className='alert alert-success' style={{ fontWeight:'bold' }}>
+                                        Make the payment of ${donations_amount} to any of the following account:
+                                            <p>Zelle account: donation@kccconline.org</p>
+                                            <p>KCCC PayPal: prm@kccconline.org</p>
+                                            <p>CashApp:  $KCCCAURORA1</p>
+                                            <p>Pay your tithe & offerings over the phone – You may also call Church Office Line on 7208591737</p>
+                                            <p>Drop off your Donation Checks at the Church office @ 1391 Oswego Street, Aurora CO</p>
+                                        </div>
                                     ) : ''
                                     }
 
@@ -342,8 +362,8 @@ export const Donation = () => {
                                      />*/}
 
                                 <PayPalScriptProvider 
-                                options={{ clientId: "AcsILzIwRTitCuyvWbiloGt4jh1Li8s7s24KF5EEoOylTMA83IGvs4pXA0B5AdOlUJJhuE1jVOJJk9zH" }}><PayPalButtons
-                                       className={showpaypal ? 'paypalbuttonshow' : 'paypalbuttonhide'}
+                                options={{ clientId: "AQEZ7zUUICwpFbxCkYk-MJUPTtusnsmhRGeJ8tfkMzMHPk_x6RHLMbC5LaaPnXhvBvvTGwR0TUBGzRAJ" }}><PayPalButtons
+                                       className={showpaypal ? 'paypalbuttonshow' : 'paypalbuttonhide'} 
                                        onClick={OnCheckForEmptyValues}
                                        createOrder={onCreateOrder}
                                        onApprove={onApproveOrder}
@@ -351,11 +371,11 @@ export const Donation = () => {
                                        onCancel={onCancel}
 
                                        style={{
-                                          tagline: false,
-                                          color: 'blue',
-                                          layout:'vertical',
-                                          label: 'pay',
-                                       }}
+                                        tagline: false,
+                                        color: 'blue',
+                                        layout:'vertical',
+                                        label: 'pay',
+                                     }}
                                       
                                         
                                     /></PayPalScriptProvider>
@@ -364,18 +384,11 @@ export const Donation = () => {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col md={3}></Col>
                     </Row>
                 </Container>
             </div>
 
  
-            <br></br><br></br><br></br>
-
-
-            <div>
-            <PaymentImages />
-            </div>
 
             <br></br><br></br>
 

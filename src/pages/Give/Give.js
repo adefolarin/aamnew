@@ -60,6 +60,31 @@ export const Give = () => {
           setGiveAmount(e.target.value);
        }
 
+       const handleButtonChange50 = (e) => {
+        setGiveAmount(e.target.value);
+        console.log(e.target.value);
+     }
+     const handleButtonChange100 = (e) => {
+        setGiveAmount(e.target.value);
+      console.log(e.target.value);
+      }
+      const handleButtonChange500 = (e) => {
+        setGiveAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange200 = (e) => {
+        setGiveAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange1000 = (e) => {
+        setGiveAmount(e.target.value);
+          console.log(e.target.value);
+      }
+      const handleButtonChange10000 = (e) => {
+          setGiveAmount(e.target.value);
+          console.log(e.target.value);
+      }
+
       useEffect(() => {
         parseInt(localStorage.setItem('givings_amount', givings_amount));
         localStorage.setItem('givings_name', givings_name);
@@ -182,16 +207,11 @@ export const Give = () => {
   
 
             <div>
-                <br></br><br></br>
                 <div style={{ position: 'relative' }}>
-                    <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+                    <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <p id="navhistory">
-                                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                                <Link to="/give" reloadDocument className='text-white' id="currentlink">Give</Link>
-                            </p>
-                            <h4>Give</h4>
+                            <h4>GIVE</h4>
                         </div>
                     </div>
                 </div>
@@ -203,20 +223,6 @@ export const Give = () => {
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <Card id="deptcard" className="eventdetailimg">
-                                <Card.Img id="foodbankimg" variant="top" src="images/givebanner.png" thumbnail />
-                            </Card>
-                        </Col>
-                    </Row>
-                    <br></br><br></br>
-                </Container>
-            </div>
-            <br></br><br></br>
-            <div>
-                <Container>
-                    <Row>
-                        <Col md={3}></Col>
-                        <Col md={6}>
                             <Card id="deptcard" className='givecard'>
                                 <Card.Body>
                                     <Form>
@@ -228,42 +234,34 @@ export const Give = () => {
                                     </InputGroup>
                                   <br></br>
                                    <div className='text-center'>
-                                    <ButtonGroup className="me-2" aria-label="First group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                   <ButtonGroup className="me-2" aria-label="First group">
+                                        <Button to="#" className='btn btn-danger' id="givebtn" 
+                                        onClick={handleButtonChange50} value={50} >
                                             $50
-                                        </Link>
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="givebtn"
+                                        onClick={handleButtonChange100} value={100} >
                                             $100
-                                        </Link>
-
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="givebtn" 
+                                        onClick={handleButtonChange200} value={200}>
+                                            $200
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="givebtn" 
+                                        onClick={handleButtonChange500} value={500}>
+                                            $500
+                                        </Button>
+                                        &nbsp;&nbsp;
+                                        <Button to="#" className='btn btn-danger' id="givebtn" 
+                                        onClick={handleButtonChange1000} value={1000} >
                                             $1000
-                                        </Link>
+                                        </Button>
                                     </ButtonGroup>
                                    </div>
                             
-                                <br></br><br></br>
-                                <div className='text-center'>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
-                                            $200
-                                        </Link>
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
-                                            $500
-                                        </Link>
-                                    </ButtonGroup>
-                                    <ButtonGroup className="me-2" aria-label="Second group">
-                                        <Link to="#" className='btn btn-danger' id="givebtn">
-                                            $10000
-                                        </Link>
-                                    </ButtonGroup>
-                                </div>
                                 <br></br>
                                       {
                                        showzelle === false ?
@@ -311,7 +309,7 @@ export const Give = () => {
                                                 value={paymentplatform} onChange={handleSelectChange} required id='giveformid'>
                                                 <option value=''>Select Payment Platform</option>
                                                 <option value='paypal'>PayPal</option>
-                                                <option value='zelle'>Zelle</option>
+                                                <option value='zelle'>Others</option>
                                                 
                                         </Form.Select>
                                         </InputGroup>
@@ -344,9 +342,14 @@ export const Give = () => {
                                     {
                                     showzelle ? 
                                     (
-                                    <div className='alert alert-success' style={{ fontWeight:'bold' }}>
-                                        Make the payment of ${givings_amount} to following Zelle account: donation@kccconline.org
-                                    </div>
+                                        <div className='alert alert-success' style={{ fontWeight:'bold' }}>
+                                        Make the payment of ${givings_amount} to any of the following account:
+                                            <p>Zelle account: donation@kccconline.org</p>
+                                            <p>KCCC PayPal: prm@kccconline.org</p>
+                                            <p>CashApp:  $KCCCAURORA1</p>
+                                            <p>Pay your tithe & offerings over the phone – You may also call Church Office Line on 7208591737</p>
+                                            <p>Drop off your Giving Checks at the Church office @ 1391 Oswego Street, Aurora CO</p>
+                                        </div>
                                     ) : ''
                                     }
 
@@ -359,7 +362,7 @@ export const Give = () => {
                                      />*/}
 
                                 <PayPalScriptProvider 
-                                options={{ clientId: "AcsILzIwRTitCuyvWbiloGt4jh1Li8s7s24KF5EEoOylTMA83IGvs4pXA0B5AdOlUJJhuE1jVOJJk9zH" }}><PayPalButtons
+                                options={{ clientId: "AQEZ7zUUICwpFbxCkYk-MJUPTtusnsmhRGeJ8tfkMzMHPk_x6RHLMbC5LaaPnXhvBvvTGwR0TUBGzRAJ" }}><PayPalButtons
                                        className={showpaypal ? 'paypalbuttonshow' : 'paypalbuttonhide'} 
                                        onClick={OnCheckForEmptyValues}
                                        createOrder={onCreateOrder}
@@ -381,18 +384,11 @@ export const Give = () => {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col md={3}></Col>
                     </Row>
                 </Container>
             </div>
 
  
-            <br></br><br></br><br></br>
-
-
-            <div>
-              <PaymentImages />
-            </div>
 
             <br></br><br></br>
 

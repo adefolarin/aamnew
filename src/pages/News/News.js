@@ -36,16 +36,11 @@ export const News = () => {
         <div>
 
             <div>
-                <br></br><br></br>
                 <div style={{ position: 'relative' }}>
-                    <Image fluid src="images/img3.jpg" alt="Card image" id="bannerimg" />
+                    <Image fluid src="images/headerbanner.png" alt="Card image" id="bannerimg" />
                     <div id="banneroverlay">
                         <div id="bannerid" className='text-center'>
-                            <p id="navhistory">
-                                <Link to="/" id="homelink" reloadDocument>Home &nbsp; &#60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Link>
-                                <Link to="/news" reloadDocument className='text-white' id="currentlink">News</Link>
-                            </p>
-                            <h4>News</h4>
+                            <h4>NEWS</h4>
                         </div>
                     </div>
                 </div>
